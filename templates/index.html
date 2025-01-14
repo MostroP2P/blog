@@ -1,0 +1,140 @@
+{% import "post_macros.html" as post_macros %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+
+  <link rel="stylesheet" href="{{ get_url(path="css/bootstrap.min.css") }}">
+  <link href=" {{ get_url(path="css/all.min.css") }}" rel=" stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ get_url(path="clean-blog.css", trailing_slash=false) }}">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="{{ config.base_url }}">
+        <img class="navbar-img" src="{{ get_url(path="img/mostro-icon-white.svg") }}" alt="Mostro">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          {% for item in config.extra.clean_blog_menu %}
+          <li class="nav-item">
+            <a class="nav-link"
+              href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">{{ item.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  {% block header %}
+  <header class="masthead">
+    <div class="overlay">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1> Mostro blog
+              <span>
+                <img src="{{ get_url(path="img/mostro-icon.svg") }}" alt="Mostro">
+              </span>
+            </h1>
+            <h2 class="subheading">
+              Fresh updates, insights, and news straight from the
+                <span class="subheading-highlight">
+                  Mostro team
+                </span>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  {% endblock header %}
+
+  {% block content %}
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="posts">
+          {% for page in paginator.pages %}
+          <div class="post-preview">
+            {{ post_macros::page_title(page=page) }}
+            <p class="post-summary">{{ page.extra.summary | safe }}</p>
+            <a class="btn btn-sm btn-secondary" href="{{ page.permalink }}">Read more</a>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Paginator -->
+        <div class="clearfix">
+          {% if paginator.previous %}
+          <a class="btn btn-primary float-left" href="{{ paginator.previous }}"> &larr; Newer Posts</a>
+          {% endif %}
+          {% if paginator.next %}
+          <a class="btn btn-primary float-right" href="{{ paginator.next }}">Older Posts &rarr;</a>
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+  {% endblock content %}
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            {% for item in config.extra.clean_blog_social %}
+            <li class="list-inline-item">
+              <a class="social-button" href="{{ item.url }}">
+                <img class="social-button-img"  src="{{ get_url(path=item.icon) }}" alt="Mostro">
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+          <p class="copyright text-muted">{% block copyright %} &copy 2024 MOSTRO.
+            {% endblock copyright %} All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ get_url(path="js/jquery.min.js") }}"></script>
+  <script src="{{ get_url(path="js/bootstrap.bundle.min.js") }}"></script>
+
+  <!--Custom scripts for this template-->
+  <script src="{{ get_url(path="js/clean-blog.min.js") }}"></script>
+
+  <!--- Additional scripts -->
+  {% block extrascripts %}
+  {% endblock extrasripts %}
+</body>
+
+</html>
