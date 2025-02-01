@@ -8,8 +8,8 @@ compile_sass = true
 build_search_index = false
 
 taxonomies = [
-    {name = "categories", rss = true, paginate_by=5},
-    {name = "tags", rss = true, paginate_by=5},
+    { name = "categories", rss = true, paginate_by = 5 },
+    { name = "tags", rss = true, paginate_by = 5 },
 ]
 
 title = "Mostro blog"
@@ -23,14 +23,21 @@ highlight_code = true
 [extra]
 # Put all your custom variables here
 clean_blog_social = [
-    {url = "https://x.com/MostroP2P", name = "X", icon = "img/x.svg"},
-    {url = "https://primal.net/p/npub1m0str0d7z2ww8rdh20t2n9lx520xjwhaq24p68umqp06wwrwtsnqen40un", name = "Nostr", icon="img/nostr.svg"},
-    {url = "https://t.me/mostrop2p", name = "Telegram",icon = "img/telegram.svg"},
-    {url = "https://github.com/MostroP2P", name = "Github",icon="img/github.svg"}
+    { url = "https://x.com/MostroP2P", name = "X", icon = "img/x.svg" },
+    { url = "https://primal.net/p/npub1m0str0d7z2ww8rdh20t2n9lx520xjwhaq24p68umqp06wwrwtsnqen40un", name = "Nostr", icon = "img/nostr.svg" },
+    { url = "https://t.me/mostrop2p", name = "Telegram", icon = "img/telegram.svg" },
+    { url = "https://github.com/MostroP2P", name = "Github", icon = "img/github.svg" },
 ]
 clean_blog_menu = [
-    {url = "$BASE_URL", name = "Blog"},
-    {url = "https://mostro.network", name = "About"},
-    {url = "https://mostro.foundation", name = "Foundation"}
+    { url = "$BASE_URL", name = "Blog" },
+    { url = "https://mostro.network", name = "About" },
+    { url = "https://mostro.foundation", name = "Foundation" },
+    { url = "/es", name = "es" },
 ]
 author_name = "negrunch"
+
+[languages.es]
+generate_feeds = true                                                                                    # there will be a feed for French content
+build_search_index = true
+taxonomies = [{ name = "categorías" }, { name = "tags" }]
+description = "Actualizaciones recientes, perspectivas e información directamente del equipo de Mostro."
