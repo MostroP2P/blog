@@ -32,7 +32,7 @@ clean_blog_menu = [
     { url = "$BASE_URL", name = "Blog" },
     { url = "https://mostro.network", name = "About" },
     { url = "https://mostro.foundation", name = "Foundation" },
-    { url = "/es", name = "es" },
+    { url = "/blog/es", name = "es" },
 ]
 author_name = "negrunch"
 
