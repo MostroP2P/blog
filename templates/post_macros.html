@@ -4,13 +4,13 @@
 </a>
 <p class="post-meta">Posted by
     {{page.extra.author }}
-     on {{ page.date | date(format="%e %B %Y")}}</p>
+     on {{ page.date | date(format="%Y-%m-%d %H:%M")}}</p>
 {% endmacro page_list %}
 
 {% macro page_header(page) %}
 <h1>{{ page.title }}</h1>
 <span class="meta">Posted by
     {{ page.extra.author }}
-    on {{ page.date | date(format="%e %B %Y")}}
+    on {{ page.date | date(format="%Y-%m-%d %H:%M")}}
 </span>
 {% endmacro page_list %}
