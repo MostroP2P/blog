@@ -4,7 +4,7 @@ date = "2025-02-01T12:00:00Z"
 
 [extra]
 author = "negrunch"
-img = "/img/gift.png"
+img = "/img/gift.jpg"
 summary = "La gestión de llaves en Mostro se basa en un sistema de seguridad tan sencillo como intercambiar regalos envueltos y cambiar combinaciones de caja fuerte: cada mensaje entre el usuario y la plataforma utiliza llaves efímeras que funcionan como “candados desechables”, mientras que cada orden de compra o venta se vincula a una llave distinta derivada de una semilla única, lo que garantiza que la información y las transacciones estén siempre protegidas."
 +++
 

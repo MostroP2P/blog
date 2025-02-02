@@ -4,7 +4,7 @@ date = "2025-02-01T12:00:00Z"
 
 [extra]
 author = "negrunch"
-img = "/img/gift.png"
+img = "/img/gift.jpg"
 summary = "Keys management on Mostro is based on a security system as simple as exchanging wrapped gifts and changing safe combinations: each message between the user and the platform uses ephemeral keys that function as *disposable locks* while each buy or sell order is linked to a different key derived from a unique seed, ensuring that the information and transactions are always protected."
 +++
 
