@@ -4,7 +4,7 @@ date = 2024-12-20
 
 [extra]
 author = "negrunch"
-img = "/img/first-post.webp"
+img = "/img/first-post.jpg"
 summary = "Durante el último año, Mostro ha logrado avances significativos en la gestión de llaves (rotando llaves para cada operación y mejorando la privacidad), estandarizando las órdenes en Nostr a través del nuevo NIP-69 y consolidando su ecosistema gracias a la participación en la residencia b4os, la creación de la Mostro Foundation y el desarrollo de librerías (mostro-tools) y nuevos clientes (una aplicación móvil y la interfaz de terminal Mostrui). Todo esto tiene como objetivo proporcionar una plataforma de intercambio peer-to-peer centrada en la privacidad y fácil de usar, respaldada por HRF, Opensats y otros colaboradores."
 +++
 

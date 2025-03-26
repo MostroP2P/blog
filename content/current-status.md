@@ -4,7 +4,7 @@ date = 2024-12-20
 
 [extra]
 author = "negrunch"
-img = "/img/first-post.webp"
+img = "/img/first-post.jpg"
 summary = "Over the past year, Mostro has made significant strides in key management (rotating keys for each trade and improving privacy), standardizing orders on Nostr through the new NIP-69, and consolidating its ecosystem thanks to participation in the b4os residency, the creation of the Mostro Foundation, and the development of libraries (mostro-tools) and new clients (a mobile app and the Mostrui terminal interface). All of this aims to provide a privacy-focused, user-friendly peer-to-peer exchange platform, supported by HRF, Opensats, and other contributors."
 +++
 
