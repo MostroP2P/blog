@@ -48,4 +48,4 @@ En resumen, la gestión de llaves en Mostro puede entenderse como el arte de usa
 
 ## Más información
 
-**Keys Management en el protocolo de Mostro**: [https://mostro.network/protocol/keys-management](https://mostro.network/protocol/keys-management)
+**Keys Management en el protocolo de Mostro**: [https://mostro.network/protocol/keys-management](https://mostro.network/protocol/key_management)
