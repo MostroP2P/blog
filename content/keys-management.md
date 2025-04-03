@@ -48,4 +48,4 @@ Now you know that Mostro not only protects your data but does so efficiently and
 
 ## More Information
 
-**Keys Management in the Mostro Protocol**: [https://mostro.network/protocol/keys-management](https://mostro.network/protocol/keys-management)
+**Keys Management in the Mostro Protocol**: [https://mostro.network/protocol/keys-management](https://mostro.network/protocol/key_management)
