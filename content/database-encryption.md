@@ -2,10 +2,7 @@
 
 [extra] author = "arkanoider" img = "/img/Data_Encryption.jpg" summary = "Identity keys are now detached from user - orders identities keys will be encrypted so also in case of database leak, no relation can be found between user and orders" +++
 
-# Mostro Core’s New Database Encryption: Protecting Your Identity Key, Made Simple
-
 Hey Mostro fans! 👋
-
 We’ve got some exciting news for all you privacy-conscious folks out there: Mostro Core just got a major upgrade in how it keeps your most important secrets safe. Let’s talk about the brand new database encryption option, why it matters, and how it works in simple terms.
 
 ---
