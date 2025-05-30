@@ -65,4 +65,4 @@ Stay safe out there, and happy trading! 🚀
 
 ---
 
-*Questions or thoughts? Drop them in the comments or join our community chat!*
+*Questions or thoughts? Drop them our [Telegram chat](https://t.me/MostroP2P)*
