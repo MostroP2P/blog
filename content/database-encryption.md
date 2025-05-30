@@ -5,8 +5,6 @@
 Hey Mostro fans! 👋
 We’ve got some exciting news for all you privacy-conscious folks out there: Mostro Core just got a major upgrade in how it keeps your most important secrets safe. Let’s talk about the brand new database encryption option, why it matters, and how it works in simple terms.
 
----
-
 ## What’s New?
 
 Starting now, when an admin launches Mostro, they’ll see a friendly prompt:
