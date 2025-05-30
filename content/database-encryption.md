@@ -1,3 +1,7 @@
++++ title = "Identity Keys encryption on Mostro" date = "2025-05-30T12:00:00Z"
+
+[extra] author = "arkanoider" img = "/img/Data_Encryption.jpg" summary = "Identity keys are now detached from user - orders identities keys will be encrypted so also in case of database leak, no relation can be found between user and orders" +++
+
 # Mostro Core’s New Database Encryption: Protecting Your Identity Key, Made Simple
 
 Hey Mostro fans! 👋
