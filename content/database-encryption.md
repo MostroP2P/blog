@@ -7,6 +7,8 @@ We’ve got some exciting news for all you privacy-conscious folks out there: Mo
 
 ## What’s New?
 
+In today’s digital world, protecting sensitive information is more important than ever, especially in decentralized platforms like Mostro. That’s why we’re excited to announce a major upgrade in how Mostro Core keeps your secrets safe.
+
 Starting now, when an admin launches Mostro, they’ll see a friendly prompt:
 
 > **“Do you want to password encrypt your database?”**
