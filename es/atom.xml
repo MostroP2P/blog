@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es">
+    <title></title>
+    <subtitle>Actualizaciones recientes, perspectivas e información directamente del equipo de Mostro.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://mostro.network/blog/es/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://mostro.network/blog"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-03-26T20:00:00+00:00</updated>
+    <id>https://mostro.network/blog/es/atom.xml</id>
+    <entry xml:lang="es">
+        <title>¡Un chat con un as bajo la manga!</title>
+        <published>2025-03-26T20:00:00+00:00</published>
+        <updated>2025-03-26T20:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://mostro.network/blog/es/p2p-chat/"/>
+        <id>https://mostro.network/blog/es/p2p-chat/</id>
+        
+        <content type="html" xml:base="https://mostro.network/blog/es/p2p-chat/">&lt;h2 id=&quot;introduccion-hablando-claro-y-seguro-en-el-mundo-bitcoin-p2p&quot;&gt;Introducción: Hablando claro y seguro en el mundo Bitcoin P2P&lt;&#x2F;h2&gt;
+&lt;p&gt;Intercambiar Bitcoin directamente entre personas (peer-to-peer o P2P) ofrece libertad y control, eliminando intermediarios. En Mostro, estamos comprometidos con hacer esta experiencia lo más fluida y segura posible. Sabemos que la comunicación clara entre comprador y vendedor es fundamental, especialmente cuando las cosas no salen según lo planeado.&lt;&#x2F;p&gt;
+&lt;p&gt;Pero, ¿qué pasa si surge una disputa? ¿Cómo podemos asegurarnos de que la verdad salga a la luz sin comprometer la privacidad de nadie? Hoy presentamos una nueva característica en Mostro diseñada exactamente para eso: un &lt;strong&gt;chat integrado, cifrado de extremo a extremo, con un as bajo la manga para resolver disputas de forma justa y transparente.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;el-dilema-de-las-disputas-mensajes-borrados-y-privacidad-en-riesgo&quot;&gt;El Dilema de las Disputas: Mensajes Borrados y Privacidad en Riesgo&lt;&#x2F;h2&gt;
+&lt;p&gt;En nuestros casi cuatro años de experiencia trabajando con &lt;a href=&quot;https:&#x2F;&#x2F;lnp2pbot.com&#x2F;&quot;&gt;@lnp2pBot&lt;&#x2F;a&gt;, nos encontramos con un problema recurrente y frustrante: cuando una de las partes intentaba estafar a la otra, a menudo borraba los mensajes de la conversación. ¡Plop! La evidencia desaparecía, dejando al usuario honesto sin poder demostrar lo sucedido y dificultando enormemente la resolución justa de la disputa.&lt;&#x2F;p&gt;
+&lt;p&gt;La solución &quot;fácil&quot; sería que nosotros utilizaramos al bot como intermediario de cada mensaje y guardáramos una copia de todas las conversaciones en una base de datos central. Así, un administrador podría simplemente revisar el historial en caso de disputa. Pero seamos sinceros, &lt;strong&gt;eso sería terrible en términos de privacidad&lt;&#x2F;strong&gt;. Iría en contra del espíritu descentralizado y privado de Bitcoin, exponiendo conversaciones que deberían ser confidenciales. Necesitábamos una solución mejor.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;mostro-chat-comunicacion-privada-por-defecto&quot;&gt;Mostro Chat: Comunicación Privada por Defecto&lt;&#x2F;h2&gt;
+&lt;p&gt;Por eso, hemos implementado un sistema de chat directamente dentro de los clientes de Mostro. Cuando la operación de compra&#x2F;venta avanza a un estatus activo, se abre un canal de comunicación directo y privado con la otra parte.&lt;&#x2F;p&gt;
+&lt;p&gt;Este chat utiliza el protocolo &lt;strong&gt;Nostr&lt;&#x2F;strong&gt; para la transferencia de mensajes, asegurando que la comunicación viaje de forma descentralizada y resistente a la censura. Más importante aún, la conversación está &lt;strong&gt;cifrada de extremo a extremo&lt;&#x2F;strong&gt;. Esto significa que solo tú y la otra persona involucrada en la transacción pueden leer los mensajes. Ni siquiera nosotros en Mostro podemos saber que están conversando, mucho menos ver lo que se dicen. Hasta aquí, es la privacidad que esperarías.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;la-innovacion-la-llave-maestra-compartida-para-disputas&quot;&gt;La Innovación: La &quot;Llave Maestra Compartida&quot; para Disputas&lt;&#x2F;h2&gt;
+&lt;p&gt;Aquí es donde las cosas se ponen interesantes y radicalmente diferentes. Para cada operación en Mostro, el sistema utiliza criptografía avanzada (específicamente, un proceso llamado &lt;strong&gt;Diffie-Hellman sobre Curvas Elípticas o DHEC&lt;&#x2F;strong&gt;) para que tú y tu contraparte generen, de forma independiente pero coordinada, una &lt;strong&gt;clave secreta compartida única&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Piensa en ello como si cada escribieras un mensaje en un papel y lo metieras en una caja fuerte específica para esa orden. Gracias a esta &quot;magia&quot; criptográfica, tanto el comprador como el vendedor obtienen una copia idéntica de la llave para &lt;em&gt;esa caja fuerte específica&lt;&#x2F;em&gt;, ¡sin necesidad de enviársela directamente entre partes! &lt;strong&gt;Solo ambas partes conocen esa llave&lt;&#x2F;strong&gt;. Es única para esa conversación y esa operación.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;resolviendo-disputas-sin-romper-la-privacidad&quot;&gt;Resolviendo Disputas sin Romper la Privacidad&lt;&#x2F;h2&gt;
+&lt;p&gt;Ahora, ¿qué sucede si hay un desacuerdo? Supongamos que el vendedor afirma no haber recibido el pago fiat, o el comprador dice que si lo envió. Aquí entra en juego la &quot;llave maestra compartida&quot;:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Surge una Disputa:&lt;&#x2F;strong&gt; Una de las partes inicia el proceso de disputa en Mostro.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Decisión Voluntaria:&lt;&#x2F;strong&gt; Cualquiera de las dos partes (comprador o vendedor) tiene la opción de &lt;strong&gt;compartir voluntariamente&lt;&#x2F;strong&gt; su copia de la &quot;llave maestra compartida&quot; con la persona designada para resolver la disputa (el mediador).&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Acceso Controlado:&lt;&#x2F;strong&gt; Con esta llave única, el mediador puede &quot;abrir&quot; la caja fuerte digital y &lt;strong&gt;descifrar únicamente la conversación correspondiente a &lt;em&gt;esa transacción específica&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Evidencia Inmutable:&lt;&#x2F;strong&gt; Los mensajes dentro de este chat están registrados de tal manera que no pueden ser borrados ni alterados sin que sea evidente. El mediador puede ver la conversación tal y como ocurrió, verificando quién dijo qué y cuándo. Esto hace extremadamente difícil para un estafador salirse con la suya si la evidencia está en el chat.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;por-que-esto-es-revolucionario&quot;&gt;¿Por Qué Esto es Revolucionario?&lt;&#x2F;h2&gt;
+&lt;p&gt;Esta solución logra lo mejor de ambos mundos:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Privacidad por Defecto:&lt;&#x2F;strong&gt; Tus conversaciones son privadas y cifradas. Nadie puede espiarlas.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Transparencia Bajo Demanda:&lt;&#x2F;strong&gt; Si surge un problema &lt;em&gt;y&lt;&#x2F;em&gt; una de las partes lo consiente, la evidencia puede ser revelada de forma segura &lt;em&gt;solo&lt;&#x2F;em&gt; al mediador y &lt;em&gt;solo&lt;&#x2F;em&gt; para esa disputa.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Seguridad Anti-Manipulación:&lt;&#x2F;strong&gt; Los mensajes no pueden ser borrados ni falsificados por un estafador para ocultar sus acciones.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Descentralización:&lt;&#x2F;strong&gt; No dependemos de almacenar tus chats privados en nuestros servidores.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Claves Únicas por Transacción:&lt;&#x2F;strong&gt; Un detalle crucial es que Mostro genera nuevas claves criptográficas para cada orden. Esto significa que incluso si vuelves a comerciar con la misma persona, la &quot;llave maestra compartida&quot; de esa nueva conversación será completamente diferente. La privacidad y seguridad de cada operación son independientes.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion-un-futuro-mas-seguro-y-justo-para-el-p2p&quot;&gt;Conclusión: Un Futuro Más Seguro y Justo para el P2P&lt;&#x2F;h2&gt;
+&lt;p&gt;Con esta implementación en el chat de Mostro, estamos dando un paso importante para fortalecer la confianza y la seguridad en los intercambios P2P de Bitcoin. Combinamos criptografía robusta con un mecanismo inteligente y respetuoso con la privacidad para asegurar que las disputas puedan resolverse de la manera más justa posible, exponiendo fácilmente a quienes intentan actuar de mala fe.&lt;&#x2F;p&gt;
+&lt;p&gt;Queremos que te sientas seguro y respaldado al usar Mostro, sabiendo que cuentas con herramientas innovadoras diseñadas para protegerte sin comprometer tus datos.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;interesado-en-los-detalles-tecnicos&quot;&gt;¿Interesado en los Detalles Técnicos?&lt;&#x2F;h2&gt;
+&lt;p&gt;Para aquellos con inclinaciones más técnicas que quieran profundizar en la criptografía detrás de la generación de esta llave compartida, pueden consultar nuestro artículo detallado aquí: &lt;a href=&quot;https:&#x2F;&#x2F;mostro.network&#x2F;protocol&#x2F;chat.html&quot;&gt;https:&#x2F;&#x2F;mostro.network&#x2F;protocol&#x2F;chat.html&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;También puedes probar &lt;strong&gt;mostro-chat&lt;&#x2F;strong&gt; el cual es una prueba-de-concepto y ver por ti mismo el funcionamiento de lo que has leido&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MostroP2P&#x2F;mostro-chat&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;MostroP2P&#x2F;mostro-chat&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="es">
+        <title>Manejo de llaves en Mostro</title>
+        <published>2025-02-01T12:00:00+00:00</published>
+        <updated>2025-02-01T12:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://mostro.network/blog/es/keys-management/"/>
+        <id>https://mostro.network/blog/es/keys-management/</id>
+        
+        <content type="html" xml:base="https://mostro.network/blog/es/keys-management/">&lt;p&gt;La gestión de llaves en Mostro puede sonar complicada si nunca has manejado conceptos técnicos relacionados con la seguridad y la criptografía. Sin embargo, te lo explicaremos con ejemplos que podrías encontrar en tu vida diaria. ¡Es más fácil de lo que parece!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;imagina-que-envias-un-regalo-envuelto&quot;&gt;Imagina que envías un regalo envuelto&lt;&#x2F;h2&gt;
+&lt;p&gt;Pensemos en la gestión de llaves como el proceso de intercambiar &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;nostr-protocol&#x2F;nips&#x2F;blob&#x2F;master&#x2F;59.md&quot;&gt;regalos envueltos&lt;&#x2F;a&gt;. Cuando envías un regalo a alguien, quieres asegurarte de que solo esa persona pueda abrirlo. En el mundo de Mostro, estos regalos son los datos que envías, y el envoltorio es la capa de seguridad que los protege.&lt;&#x2F;p&gt;
+&lt;p&gt;En este caso, las llaves son como las combinaciones secretas necesarias para abrir ese envoltorio. Mostro utiliza una llave efímera para cada mensaje que se envía entre el cliente y la plataforma. Estas llaves efímeras, una característica esencial de los &lt;strong&gt;gift wraps&lt;&#x2F;strong&gt;, garantizan que cada mensaje esté protegido de manera individual y única.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;rotacion-de-llaves-cambiar-de-cerradura-para-cada-operacion&quot;&gt;Rotación de llaves: Cambiar de cerradura para cada operación&lt;&#x2F;h2&gt;
+&lt;p&gt;Supongamos que en el mundo físico necesitas intercambiar un paquete con Bob. Para ello, Bob y tú deben enviarse varias cartas confidenciales para ponerse de acuerdo en cómo hacer el intercambio. Para esta operación, utilizarás una identidad diferente a la que usarás en tus siguientes operaciones con otros usuarios. Incluso si volvieras a operar con Bob, ambos estarían utilizando identidades distintas. ¡Eso es lo que hace Mostro con la rotación de llaves!&lt;&#x2F;p&gt;
+&lt;p&gt;Cada vez que un usuario crea o toma una orden de compra o venta, se genera una nueva llave específica para esa operación. Estas llaves se derivan de una semilla (&lt;em&gt;seed&lt;&#x2F;em&gt;) que el cliente genera aleatoriamente para el usuario. De esta semilla se pueden derivar muchas llaves: la llave pública con índice &lt;code&gt;0&lt;&#x2F;code&gt; (ruta de derivación &lt;code&gt;m&#x2F;44&#x27;&#x2F;1237&#x27;&#x2F;38383&#x27;&#x2F;0&#x2F;0&lt;&#x2F;code&gt;) actúa como identificador principal ante Mostro, mientras que las llaves con índices a partir de &lt;code&gt;1&lt;&#x2F;code&gt; (por ejemplo, &lt;code&gt;m&#x2F;44&#x27;&#x2F;1237&#x27;&#x2F;38383&#x27;&#x2F;0&#x2F;1&lt;&#x2F;code&gt;) son las que se rotan para cada nueva orden. De este modo, aunque la llave para una operación permanezca constante mientras dura la operación, al finalizar esta se usa una nueva llave para la siguiente orden, lo que garantiza seguridad adicional.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;llaves-efimeras-cerraduras-desechables-para-mensajes-unicos&quot;&gt;Llaves efímeras: Cerraduras desechables para mensajes únicos&lt;&#x2F;h2&gt;
+&lt;p&gt;Ahora imagina que necesitas enviar una carta importante por correo, pero no quieres usar tu cerradura habitual para protegerla. En su lugar, utilizas un candado desechable que solo sirve para ese envío en particular. Una vez que la carta llega a su destino, el candado ya no tiene utilidad.&lt;&#x2F;p&gt;
+&lt;p&gt;En Mostro, las llaves efímeras funcionan de manera similar. Son llaves que se crean para proteger datos durante un corto período de tiempo o para un propósito específico, como un mensaje individual entre el cliente y Mostro. Una vez que el mensaje se procesa, esa llave se destruye y no se puede volver a usar. Esto minimiza el riesgo de que alguien pueda aprovechar una llave comprometida.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;reputacion-vs-modo-privado-completo&quot;&gt;Reputación vs. Modo privado completo&lt;&#x2F;h2&gt;
+&lt;p&gt;Mostro permite a los usuarios elegir entre dos modos de operación: &lt;strong&gt;reputación&lt;&#x2F;strong&gt; y &lt;strong&gt;modo privado completo&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Modo reputación&lt;&#x2F;strong&gt;: Tal como indicamos anteriormente, los usuarios se identifican ante Mostro con la llave pública de índice &lt;code&gt;0&lt;&#x2F;code&gt; (&lt;code&gt;m&#x2F;44&#x27;&#x2F;1237&#x27;&#x2F;38383&#x27;&#x2F;0&#x2F;0&lt;&#x2F;code&gt;). Esto permite mantener la reputación vinculada a esta llave. Solo Mostro y el usuario conocen dicha llave pública, garantizando la privacidad del usuario. Mostro se encarga del cálculo de la reputación a partir de la calificación de la contraparte.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Modo privado completo&lt;&#x2F;strong&gt;: Permite a los usuarios operar sin necesidad de enviar una llave identificadora. De esta forma, Mostro no puede vincular las órdenes de un mismo usuario, lo que garantiza un nivel máximo de privacidad y seguridad. Debido a la naturaleza privada de este modo, no es posible mantener una reputación para el usuario.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;por-que-es-importante-esto&quot;&gt;¿Por qué es importante esto?&lt;&#x2F;h2&gt;
+&lt;p&gt;Piensa en cuánto te esfuerzas para proteger algo valioso, como un documento confidencial o un regalo especial. La gestión de llaves en Mostro asegura que toda la información y las operaciones realizadas estén protegidas al máximo nivel. Combinando el uso de llaves efímeras para proteger cada mensaje y la rotación de llaves para cada operación, Mostro garantiza que tus datos estén siempre seguros.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusión&lt;&#x2F;h2&gt;
+&lt;p&gt;En resumen, la gestión de llaves en Mostro puede entenderse como el arte de usar combinaciones de seguridad únicas, temporales y específicas para mantener tus datos protegidos. Ya sea utilizando llaves efímeras para mensajes individuales o rotando llaves derivadas de una semilla para cada orden, el sistema está diseñado para ofrecer tranquilidad y seguridad en cada interacción.&lt;&#x2F;p&gt;
+&lt;p&gt;¡Ahora ya sabes que Mostro no solo protege tus datos, sino que lo hace de forma eficiente y cuidadosa, como si cada dato fuera un regalo envuelto solo para ti!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;mas-informacion&quot;&gt;Más información&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Keys Management en el protocolo de Mostro&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;mostro.network&#x2F;protocol&#x2F;key_management&quot;&gt;https:&#x2F;&#x2F;mostro.network&#x2F;protocol&#x2F;keys-management&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="es">
+        <title>Estado actual en Mostro</title>
+        <published>2024-12-20T00:00:00+00:00</published>
+        <updated>2024-12-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://mostro.network/blog/es/current-status/"/>
+        <id>https://mostro.network/blog/es/current-status/</id>
+        
+        <content type="html" xml:base="https://mostro.network/blog/es/current-status/">&lt;p&gt;Desde hace más de un año hemos estado trabajando incansablemente en Mostro, y aquí tienes un breve resumen.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;gestion-de-llaves&quot;&gt;Gestión de llaves&lt;&#x2F;h2&gt;
+&lt;p&gt;Hemos realizado muchas mejoras y probablemente una de las más importantes sea el diseño final de la gestión de llaves. Empezamos a discutir esta idea el trimestre pasado y la comentamos en el último informe. La gestión de llaves es una forma en que los clientes rotan las llaves para cada operación, añadiendo otra capa de privacidad a la implementación previa de gift wrap. Puedes encontrar información más detallada &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MostroP2P&#x2F;mostro&#x2F;pull&#x2F;398&quot;&gt;aquí&lt;&#x2F;a&gt;. Hoy hemos fusionado nuestro &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MostroP2P&#x2F;mostro&#x2F;pull&#x2F;398&quot;&gt;PR&lt;&#x2F;a&gt; principal para implementarlo en mostrod, y también lo implementamos en &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MostroP2P&#x2F;mostro-core&#x2F;pull&#x2F;67&#x2F;files&quot;&gt;mostro-core&lt;&#x2F;a&gt; y &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MostroP2P&#x2F;mostro-cli&#x2F;pull&#x2F;89&quot;&gt;mostro-cli&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;nuevo-nostr-nip-fusionado&quot;&gt;Nuevo Nostr NIP fusionado&lt;&#x2F;h2&gt;
+&lt;p&gt;También tuvimos nuestro primer NIP oficial fusionado, &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;nostr-protocol&#x2F;nips&#x2F;blob&#x2F;master&#x2F;69.md&quot;&gt;NIP-69&lt;&#x2F;a&gt;. Con esto buscamos estandarizar todas las órdenes de la plataforma peer-to-peer en Nostr para tener un gran pool de liquidez fácilmente filtrable.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;b4os&quot;&gt;B4OS&lt;&#x2F;h2&gt;
+&lt;p&gt;Mostro fue uno de los proyectos que participó en la &lt;a href=&quot;https:&#x2F;&#x2F;www.libreriadesatoshi.com&#x2F;b4os&quot;&gt;residencia b4os&lt;&#x2F;a&gt;, la cual se llevó a cabo en Buenos Aires justo después de la &lt;a href=&quot;https:&#x2F;&#x2F;www.labitconf.com&#x2F;&quot;&gt;LABITCONF&lt;&#x2F;a&gt; de este año.&lt;&#x2F;p&gt;
+&lt;p&gt;Yo participé como mentor, yendo allí diariamente durante todo el programa, ayudando a los desarrolladores a comenzar con Mostro. Mostro recibió mucha atención y contó con el mayor número de colaboradores trabajando en él (8 en total). Tuvimos dos semanas muy productivas en las que refinamos cómo Mostro manejará la privacidad y la reputación al mismo tiempo. Esto requerirá algunos cambios en mostrod y mejoras en la &lt;a href=&quot;https:&#x2F;&#x2F;mostro.network&#x2F;protocol&#x2F;&quot;&gt;documentación del protocolo&lt;&#x2F;a&gt;, para la cual (cruzando los dedos) ahora tenemos una versión final.&lt;&#x2F;p&gt;
+&lt;p&gt;Durante la residencia b4os, recibimos &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MostroP2P&#x2F;mostro-regtest&#x2F;pull&#x2F;2&quot;&gt;contribuciones&lt;&#x2F;a&gt; que mejoraron nuestros contenedores Docker de Mostro — un trabajo increíble que puedes ver &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MostroP2P&#x2F;mostro-regtest&quot;&gt;aquí&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fundacion-mostro&quot;&gt;Fundación Mostro&lt;&#x2F;h2&gt;
+&lt;p&gt;También avanzamos en el establecimiento de la Fundación Mostro, que servirá como entidad legal para gestionar donaciones y dirigirlas a los desarrolladores que deseen contribuir. Otro &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MostroP2P&#x2F;mostro-foundation-website&quot;&gt;colaborador&lt;&#x2F;a&gt; creó el &lt;a href=&quot;https:&#x2F;&#x2F;mostro.foundation&#x2F;&quot;&gt;sitio web de la Fundación Mostro&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;mostro-tools&quot;&gt;Mostro-tools&lt;&#x2F;h2&gt;
+&lt;p&gt;Ya contamos con colaboradores trabajando en &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MostroP2P&#x2F;mostro-tools&quot;&gt;mostro-tools&lt;&#x2F;a&gt;, una biblioteca en TypeScript que implementa el &lt;a href=&quot;https:&#x2F;&#x2F;mostro.network&#x2F;protocol&#x2F;&quot;&gt;protocolo Mostro&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;aplicacion-movil&quot;&gt;Aplicación móvil&lt;&#x2F;h2&gt;
+&lt;p&gt;Nuestro intento anterior de crear la aplicación móvil fracasó, el desarrollador se fue, así que encontramos a otro desarrollador; la tercera es la vencida. Ahora estamos avanzando con la aplicación móvil, que está siendo desarrollada por un desarrollador llamado Biz. Trabajar en Mostro es algo complejo porque nos centramos en la privacidad y la resistencia a la censura, y nuestro objetivo principal es entregar estas funciones de privacidad en una aplicación fácil de usar. Quiero que esta aplicación sea muy intuitiva, adecuada incluso para usuarios no técnicos. Biz entregó una primera aplicación móvil funcional; podemos ver todo el trabajo &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MostroP2P&#x2F;mobile&#x2F;pull&#x2F;31&quot;&gt;aquí&lt;&#x2F;a&gt; y &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MostroP2P&#x2F;mobile&#x2F;pull&#x2F;33&quot;&gt;aquí&lt;&#x2F;a&gt;. La probamos y funciona :D&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;mostrui&quot;&gt;Mostrui&lt;&#x2F;h2&gt;
+&lt;p&gt;Finalmente, iniciamos otro cliente, una Interfaz de Usuario de Terminal (TUI) que nos está ayudando a implementar y comprender los problemas que los desarrolladores de clientes pueden encontrar en el proceso de construir un cliente. Este cliente se llama &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MostroP2P&#x2F;mostrui&quot;&gt;Mostrui&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Todo esto no hubiera sido posible sin el apoyo de &lt;a href=&quot;https:&#x2F;&#x2F;hrf.org&#x2F;&quot;&gt;HRF&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;opensats.org&#x2F;&quot;&gt;Opensats&lt;&#x2F;a&gt; y todos los colaboradores &amp;lt;3&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
