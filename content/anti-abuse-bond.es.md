@@ -8,7 +8,7 @@ img = "/img/anti-abuse-bond.jpg"
 summary = "Uno de los grandes retos de un sistema P2P descentralizado, resistente a la censura y privado como Mostro es mitigar el abuso: el spam en el libro de órdenes y los intentos de estafa de quienes pueden crear una identidad nueva en segundos. Por eso sumamos un mecanismo opcional: el depósito anti-abuso. Al entrar en una operación, el usuario bloquea una pequeña cantidad de sats como garantía que recupera íntegra si actúa de buena fe, pero que pierde si intenta estafar o abandona la operación. Es un segundo hold invoice independiente del escrow, y cada nodo decide si lo activa y bajo qué condiciones, según las características de su comunidad."
 +++
 
-Construir un sistema de intercambio P2P descentralizado y resistente a la censura sobre Nostr y privado, como es Mostro, trae consigo un reto difícil: ¿cómo mitigar el abuso?
+Construir un sistema de intercambio P2P descentralizado, resistente a la censura y privado sobre Nostr, como es Mostro, trae consigo un reto difícil: ¿cómo mitigar el abuso?
 
 Un usuario malintencionado puede intentar llenar el libro de órdenes de un Mostro con ofertas spam, solo para molestar y dejar las ofertas reales perdidas entre tanto ruido. O al revés: vaciar el libro tomando todas las ofertas únicamente para que desaparezcan. Y como Mostro es anónimo —y crear una identidad nueva es tan fácil como generar un par de llaves—, ¿cómo se protege a los usuarios frente a quienes quieren estafar?
 
@@ -34,7 +34,7 @@ Recuerda que Mostro no es un único servidor, sino muchos nodos compitiendo entr
 
 ## ¿No es lo mismo que el escrow?
 
-No. El depósito es completamente independiente del escrow de la operación. Es un segundo hold invoice: tus sats quedan únicamente bloqueados en tu billetera, no se gastan. Si todo va bien, se desbloquean y vuelven a ti sin haber salido nunca de tu wallet. No se mezcla ni se descuenta del monto del intercambio.
+No. El depósito es completamente independiente del escrow de la operación. Es un segundo hold invoice: tus sats quedan únicamente bloqueados en tu billetera, no se gastan. Si todo va bien, se desbloquean y vuelven a ti sin haber salido nunca de tu billetera. No se mezcla ni se descuenta del monto del intercambio.
 
 Así que, en condiciones normales, el depósito no es un costo: vuelve íntegro a tu billetera, igual que los sats bloqueados en cualquier hold invoice.
 
@@ -51,7 +51,7 @@ Recuperas el **100%** siempre que cumplas tu parte:
 Solo pierdes tu depósito por intentar abusar del sistema. Hay dos situaciones:
 
 1. **Por decisión en una disputa.** Un administrador (*solver*), tras revisar las pruebas, determina que actuaste de mala fe e instruye a Mostro a cobrar tu depósito.
-2. **Por incumplir y dejar correr el tiempo.** Si tomas o creas una orden y luego no pagas la hold invoice de la orden o no entregas tu invoice a tiempo, dejas vencer el plazo que te correspondía. Esto solo aplica si el nodo activó esa política.
+2. **Por incumplir y dejar correr el tiempo.** Si tomas o creas una orden y luego no pagas la hold invoice de la orden o no entregas tu factura a tiempo, dejas vencer el plazo que te correspondía. Esto solo aplica si el nodo activó esa política.
 
 ## ¿A dónde van los sats de un depósito cobrado?
 
@@ -61,13 +61,13 @@ Si en cambio se cobra por dejar vencer el plazo, los sats van al nodo.
 
 ## Veámoslo con un ejemplo
 
-> **Un vendedor que quiere quedarse con todo.** Carlos crea una orden de venta (es el **vendedor**) y Diana la toma para comprar sats (es la **compradora**), en un nodo que exige depósito anti-abuso. Diana hace la transferencia fiat correctamente y guarda el comprobante. Pero Carlos, de mala fe, se niega a liberar los sats y alega que nunca recibió el pago, con la esperanza de quedarse a la vez con el fiat y con los sats.
->
-> Diana abre una disputa y le presenta al administrador el comprobante de la transferencia. El *solver* confirma que Diana pagó: Mostro libera los sats del escrow a su favor y **cobra el depósito de Carlos**. Como compensación por el mal rato, Diana recibe una parte de ese depósito; el resto queda para el nodo. Carlos no solo no logró su estafa, sino que perdió su propio dinero por intentarla.
+**Un vendedor que quiere quedarse con todo.** Carlos crea una orden de venta (es el **vendedor**) y Diana la toma para comprar sats (es la **compradora**), en un nodo que exige depósito anti-abuso. Diana hace la transferencia fiat correctamente y guarda el comprobante. Pero Carlos, de mala fe, se niega a liberar los sats y alega que nunca recibió el pago, con la esperanza de quedarse a la vez con el fiat y con los sats.
 
-> **Alguien que toma una orden y desaparece.** Eduardo toma una orden para comprar sats y Mostro le pide el siguiente paso para continuar. Pero Eduardo simplemente deja de responder: no paga, no avanza, no cancela. Su contraparte queda en el aire esperando a alguien que ya no va a aparecer.
->
-> En un nodo que activó la política de plazos, no hace falta abrir ninguna disputa: cuando vence el tiempo que le correspondía a Eduardo, **pierde el depósito de esa operación** automáticamente. Así, abandonar una orden a medias deja de ser gratis, y quien actúa en serio no queda atrapado esperando indefinidamente.
+Diana abre una disputa y le presenta al administrador el comprobante de la transferencia. El *solver* confirma que Diana pagó: Mostro libera los sats del escrow a su favor y **cobra el depósito de Carlos**. Como compensación por el mal rato, Diana recibe una parte de ese depósito; el resto queda para el nodo. Carlos no solo no logró su estafa, sino que perdió su propio dinero por intentarla.
+
+**Alguien que toma una orden y desaparece.** Eduardo toma una orden para comprar sats y Mostro le pide el siguiente paso para continuar. Pero Eduardo simplemente deja de responder: no paga, no avanza, no cancela. Su contraparte queda en el aire esperando a alguien que ya no va a aparecer.
+
+En un nodo que activó la política de plazos, no hace falta abrir ninguna disputa: cuando vence el tiempo que le correspondía a Eduardo, **pierde el depósito de esa operación** automáticamente. Así, abandonar una orden a medias deja de ser gratis, y quien actúa en serio no queda atrapado esperando indefinidamente.
 
 ## Si te corresponde el depósito de tu contraparte
 
