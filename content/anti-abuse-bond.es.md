@@ -5,14 +5,14 @@ date = "2026-06-17T12:00:00Z"
 [extra]
 author = "catrya"
 img = "/img/anti-abuse-bond.jpg"
-summary = "Uno de los grandes retos de un sistema P2P descentralizado, resistente a la censura y privado como Mostro es mitigar el abuso: el spam en el libro de órdenes y los intentos de estafa de quienes pueden crear una identidad nueva en segundos. Por eso sumamos un mecanismo opcional: el depósito anti-abuso. Al entrar en una operación, el usuario bloquea una pequeña cantidad de sats como garantía que recupera íntegra si actúa de buena fe, pero que pierde si intenta estafar o abandona la operación. Es un segundo hold invoice independiente del escrow, y cada nodo decide si lo activa y bajo qué condiciones, según las características de su comunidad."
+summary = "Uno de los grandes retos de un sistema P2P descentralizado, resistente a la censura y privado como Mostro es mitigar el abuso: el spam en el libro de órdenes y los intentos de estafa de quienes pueden crear una identidad nueva en segundos. Por eso sumamos un mecanismo opcional: el depósito anti-abuso. Al entrar en una operación, el usuario bloquea una pequeña cantidad de sats como garantía que recupera íntegra si actúa de buena fe, pero que pierde si intenta estafar, hacer spam o abandonar la operación. Es un segundo hold invoice independiente del escrow, y cada nodo decide si lo activa y bajo qué condiciones, según las características de su comunidad."
 +++
 
 Construir un sistema de intercambio P2P descentralizado, resistente a la censura y privado sobre Nostr, como es Mostro, trae consigo un reto difícil: ¿cómo mitigar el abuso?
 
-Un usuario malintencionado puede intentar llenar el libro de órdenes de un Mostro con ofertas spam, solo para molestar y dejar las ofertas reales perdidas entre tanto ruido. O al revés: vaciar el libro tomando todas las ofertas únicamente para que desaparezcan. Y como Mostro es anónimo —y crear una identidad nueva es tan fácil como generar un par de llaves—, ¿cómo se protege a los usuarios frente a quienes quieren estafar?
+Un usuario malintencionado puede intentar llenar el libro de órdenes de un Mostro con ofertas spam, solo para molestar y dejar las ofertas reales perdidas entre tanto ruido. O al revés: vaciar el libro tomando todas las ofertas únicamente para que desaparezcan. Y como Mostro es anónimo —y crear una identidad nueva es tan fácil como generar un par de llaves—, también está quien intenta estafar directamente a su contraparte. ¿Cómo se frena a quien quiere sabotear el libro de órdenes o estafar a otros usuarios?
 
-Es cierto que ya tenemos defensas sólidas: existe un sistema de disputas, y la hold invoice del escrow no se libera hasta que el vendedor confirma que recibió el fiat. Un estafador, por tanto, difícilmente logra su objetivo. Pero faltaba algo: hasta ahora, intentarlo no costaba nada. El que lo intentaba y fallaba simplemente lo volvía a intentar.
+Es cierto que ya tenemos defensas. Contra la estafa, existe un sistema de disputas, y la hold invoice del escrow no se libera hasta que el vendedor confirma que recibió el fiat, así que un estafador difícilmente logra su objetivo; y contra el spam, Mostro aplica una [prueba de trabajo](https://mostro.network/protocol/chat.html#other-considerations) (*proof of work*) que encarece inundar la red de eventos. Pero ninguna era suficiente: al estafador, intentarlo no le costaba nada, y la prueba de trabajo no detiene a un atacante decidido. El que lo intentaba y fallaba simplemente lo volvía a intentar.
 
 ## Una decisión que nos tomó tiempo
 
@@ -24,7 +24,7 @@ La respuesta fue no imponerlo. Decidimos que esta funcionalidad sería **opciona
 
 La idea es la misma que la de un depósito de alquiler. Cuando alquilas un apartamento te piden una garantía: si devuelves todo en orden, la recuperas íntegra; solo la pierdes si rompes algo. Funciona porque alinea los incentivos —cuidas más lo que sabes que te puede costar.
 
-En Mostro, al entrar en una operación pones en garantía una pequeña cantidad de sats que recuperas **por completo** si actúas de buena fe, pero que pierdes si intentas estafar a tu contraparte o incumples tu parte del trato. La consecuencia es directa: un estafador deja de jugar gratis. Ahora pone **su propio dinero en riesgo**, y eso desalienta el abuso antes de que ocurra.
+En Mostro, al entrar en una operación pones en garantía una pequeña cantidad de sats que recuperas **por completo** si actúas de buena fe, pero que pierdes si intentas estafar a tu contraparte, vaciar el libro de órdenes o hacer spam, o si incumples tu parte del trato. La consecuencia es directa: tanto el estafador como el spammer dejan de jugar gratis. Ahora ponen **su propio dinero en riesgo**, y eso desalienta el abuso antes de que ocurra.
 
 ## Cada nodo pone sus reglas
 

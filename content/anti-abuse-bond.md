@@ -5,14 +5,14 @@ date = "2026-06-17T12:00:00Z"
 [extra]
 author = "catrya"
 img = "/img/anti-abuse-bond.jpg"
-summary = "One of the great challenges of a decentralized, censorship-resistant, and private P2P system like Mostro is mitigating abuse: spam in the order book and the scam attempts of those who can create a brand-new identity in seconds. That's why we added an optional mechanism: the anti-abuse bond. When entering a trade, the user locks a small amount of sats as collateral that they get back in full if they act in good faith, but which they lose if they try to scam or abandon the trade. It is a second hold invoice, independent from the escrow, and each node decides whether to enable it and under what conditions, according to the characteristics of its community."
+summary = "One of the great challenges of a decentralized, censorship-resistant, and private P2P system like Mostro is mitigating abuse: spam in the order book and the scam attempts of those who can create a brand-new identity in seconds. That's why we added an optional mechanism: the anti-abuse bond. When entering a trade, the user locks a small amount of sats as collateral that they get back in full if they act in good faith, but which they lose if they try to scam, spam, or abandon the trade. It is a second hold invoice, independent from the escrow, and each node decides whether to enable it and under what conditions, according to the characteristics of its community."
 +++
 
 Building a decentralized, censorship-resistant, and private P2P exchange system on Nostr, like Mostro, comes with a hard challenge: how do you mitigate abuse?
 
-A malicious user can try to flood a Mostro's order book with spam offers, just to be a nuisance and bury the real offers in the noise. Or the other way around: empty the book by taking every offer just so they vanish. And since Mostro is anonymous—and creating a new identity is as easy as generating a key pair—how do you protect users from those who want to scam?
+A malicious user can try to flood a Mostro's order book with spam offers, just to be a nuisance and bury the real offers in the noise. Or the other way around: empty the book by taking every offer just so they vanish. And since Mostro is anonymous—and creating a new identity is as easy as generating a key pair—there are also those who simply try to scam their counterparty. How do you stop both the one sabotaging the order book and the one trying to scam other users?
 
-It's true that we already have solid defenses: there is a dispute system, and the escrow's hold invoice is not released until the seller confirms they received the fiat. A scammer, therefore, rarely achieves their goal. But something was missing: until now, trying cost nothing. Whoever tried and failed would simply try again.
+It's true that we already have defenses. Against scams, there is a dispute system, and the escrow's hold invoice is not released until the seller confirms they received the fiat, so a scammer rarely achieves their goal; and against spam, Mostro applies a [proof of work](https://mostro.network/protocol/chat.html#other-considerations) that makes flooding the network with events more expensive. But neither was enough: for the scammer, trying cost nothing, and the proof of work doesn't stop a determined attacker. Whoever tried and failed would simply try again.
 
 ## A decision that took us time
 
@@ -24,7 +24,7 @@ The answer was not to impose it. We decided this feature would be **optional**: 
 
 The idea is the same as a rental deposit. When you rent an apartment they ask you for a security deposit: if you return everything in order, you get it back in full; you only lose it if you break something. It works because it aligns incentives—you take better care of what you know could cost you.
 
-In Mostro, when entering a trade you put up a small amount of sats as collateral that you get back **in full** if you act in good faith, but which you lose if you try to scam your counterparty or fail to do your part. The consequence is direct: a scammer no longer plays for free. They now put **their own money at risk**, and that discourages abuse before it happens.
+In Mostro, when entering a trade you put up a small amount of sats as collateral that you get back **in full** if you act in good faith, but which you lose if you try to scam your counterparty, empty the order book or spam it, or if you fail to do your part. The consequence is direct: both the scammer and the spammer stop playing for free. They now put **their own money at risk**, and that discourages abuse before it happens.
 
 ## Each node sets its own rules
 
