@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <link rel="stylesheet" href="https://mostro.network/blog/css/bootstrap.min.css">
+  <link href=" https://mostro.network/blog/css/all.min.css" rel=" stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://mostro.network/blog/clean-blog.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">
+        <img class="navbar-img" src="https://mostro.network/blog/img/mostro-icon-white.svg" alt="Mostro">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">Blog</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network">About</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.foundation">Foundation</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="&#x2F;blog&#x2F;es">es</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('https://mostro.network/blog/img/anti-abuse-bond.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          
+<h1>El depósito anti-abuso: poner la honestidad en garantía</h1>
+<span class="meta">Posted by
+    catrya
+    on 2026-06-17 12:00
+</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Construir un sistema de intercambio P2P descentralizado, resistente a la censura y privado sobre Nostr, como es Mostro, trae consigo un reto difícil: ¿cómo mitigar el abuso?</p>
+<p>Un usuario malintencionado puede intentar llenar el libro de órdenes de un Mostro con ofertas spam, solo para molestar y dejar las ofertas reales perdidas entre tanto ruido. O al revés: vaciar el libro tomando todas las ofertas únicamente para que desaparezcan. Y como Mostro es anónimo —y crear una identidad nueva es tan fácil como generar un par de llaves—, también está quien intenta estafar directamente a su contraparte. ¿Cómo se frena a quien quiere sabotear el libro de órdenes o estafar a otros usuarios?</p>
+<p>Es cierto que ya tenemos defensas. Contra la estafa, existe un sistema de disputas, y la hold invoice del escrow no se libera hasta que el vendedor confirma que recibió el fiat, así que un estafador difícilmente logra su objetivo; y contra el spam, Mostro aplica una <a rel="external" href="https://mostro.network/protocol/chat.html#other-considerations">prueba de trabajo</a> (<em>proof of work</em>) que encarece inundar la red de eventos. Pero ninguna era suficiente: al estafador, intentarlo no le costaba nada, y la prueba de trabajo no detiene a un atacante decidido. El que lo intentaba y fallaba simplemente lo volvía a intentar.</p>
+<h2 id="una-decision-que-nos-tomo-tiempo">Una decisión que nos tomó tiempo</h2>
+<p>Llevábamos tiempo pensando en un depósito anti-abuso, pero nos frenaba que, si alguien completamente nuevo quiere comprar sats, ¿cómo va a pagar un depósito si todavía no tiene sats?</p>
+<p>La respuesta fue no imponerlo. Decidimos que esta funcionalidad sería <strong>opcional</strong>: cada administrador de un nodo Mostro puede activarla o no, y fijar las condiciones que considere según las características propias de su comunidad. Un nodo orientado a recién llegados puede prescindir de ella; otro, más expuesto al abuso, puede activarla. La red decide, no nosotros.</p>
+<h2 id="que-es-el-deposito-anti-abuso">¿Qué es el depósito anti-abuso?</h2>
+<p>La idea es la misma que la de un depósito de alquiler. Cuando alquilas un apartamento te piden una garantía: si devuelves todo en orden, la recuperas íntegra; solo la pierdes si rompes algo. Funciona porque alinea los incentivos —cuidas más lo que sabes que te puede costar.</p>
+<p>En Mostro, al entrar en una operación pones en garantía una pequeña cantidad de sats que recuperas <strong>por completo</strong> si actúas de buena fe, pero que pierdes si intentas estafar a tu contraparte, vaciar el libro de órdenes o hacer spam, o si incumples tu parte del trato. La consecuencia es directa: tanto el estafador como el spammer dejan de jugar gratis. Ahora ponen <strong>su propio dinero en riesgo</strong>, y eso desalienta el abuso antes de que ocurra.</p>
+<h2 id="cada-nodo-pone-sus-reglas">Cada nodo pone sus reglas</h2>
+<p>Recuerda que Mostro no es un único servidor, sino muchos nodos compitiendo entre sí. Cada nodo que activa el depósito define sus propias reglas: a quién se lo pide (a quien crea la orden, a quien la toma, o a ambos) y de cuánto es. El monto suele ser un porcentaje pequeño del valor de la orden —por ejemplo, un <strong>1%</strong> con un mínimo en sats—, pero ese porcentaje lo decide cada nodo.</p>
+<blockquote>
+<p><strong>Consejo:</strong> Puedes consultar si el nodo que estás usando exige un depósito anti-abuso —y de cuánto sería— desde tu propio cliente de Mostro, en la sección <em>Acerca de</em>, antes de operar.</p>
+</blockquote>
+<h2 id="no-es-lo-mismo-que-el-escrow">¿No es lo mismo que el escrow?</h2>
+<p>No. El depósito es completamente independiente del escrow de la operación. Es un segundo hold invoice: tus sats quedan únicamente bloqueados en tu billetera, no se gastan. Si todo va bien, se desbloquean y vuelven a ti sin haber salido nunca de tu billetera. No se mezcla ni se descuenta del monto del intercambio.</p>
+<p>Así que, en condiciones normales, el depósito no es un costo: vuelve íntegro a tu billetera, igual que los sats bloqueados en cualquier hold invoice.</p>
+<h2 id="cuando-recupero-mi-deposito">¿Cuándo recupero mi depósito?</h2>
+<p>Recuperas el <strong>100%</strong> siempre que cumplas tu parte:</p>
+<ul>
+<li>Completas el intercambio correctamente.</li>
+<li>Cancelas la orden de forma cooperativa.</li>
+<li>Surge una disputa y el administrador no determina que hayas actuado de mala fe.</li>
+</ul>
+<h2 id="y-cuando-puedo-perderlo">¿Y cuándo puedo perderlo?</h2>
+<p>Solo pierdes tu depósito por intentar abusar del sistema. Hay dos situaciones:</p>
+<ol>
+<li><strong>Por decisión en una disputa.</strong> Un administrador (<em>solver</em>), tras revisar las pruebas, determina que actuaste de mala fe e instruye a Mostro a cobrar tu depósito.</li>
+<li><strong>Por incumplir y dejar correr el tiempo.</strong> Si tomas o creas una orden y luego no pagas la hold invoice de la orden o no entregas tu factura a tiempo, dejas vencer el plazo que te correspondía. Esto solo aplica si el nodo activó esa política.</li>
+</ol>
+<h2 id="a-donde-van-los-sats-de-un-deposito-cobrado">¿A dónde van los sats de un depósito cobrado?</h2>
+<p>Cuando un depósito se cobra por decisión en una disputa, los sats se reparten entre el nodo —que así financia el trabajo de resolver disputas y mantener el servicio— y la contraparte honesta, como compensación por el perjuicio. La proporción de ese reparto la define cada nodo y es pública, así que puedes conocerla antes de operar.</p>
+<p>Si en cambio se cobra por dejar vencer el plazo, los sats van al nodo.</p>
+<h2 id="veamoslo-con-un-ejemplo">Veámoslo con un ejemplo</h2>
+<p><strong>Un vendedor que quiere quedarse con todo.</strong> Carlos crea una orden de venta (es el <strong>vendedor</strong>) y Diana la toma para comprar sats (es la <strong>compradora</strong>), en un nodo que exige depósito anti-abuso. Diana hace la transferencia fiat correctamente y guarda el comprobante. Pero Carlos, de mala fe, se niega a liberar los sats y alega que nunca recibió el pago, con la esperanza de quedarse a la vez con el fiat y con los sats.</p>
+<p>Diana abre una disputa y le presenta al administrador el comprobante de la transferencia. El <em>solver</em> confirma que Diana pagó: Mostro libera los sats del escrow a su favor y <strong>cobra el depósito de Carlos</strong>. Como compensación por el mal rato, Diana recibe una parte de ese depósito; el resto queda para el nodo. Carlos no solo no logró su estafa, sino que perdió su propio dinero por intentarla.</p>
+<p><strong>Alguien que toma una orden y desaparece.</strong> Eduardo toma una orden para comprar sats y Mostro le pide el siguiente paso para continuar. Pero Eduardo simplemente deja de responder: no paga, no avanza, no cancela. Su contraparte queda en el aire esperando a alguien que ya no va a aparecer.</p>
+<p>En un nodo que activó la política de plazos, no hace falta abrir ninguna disputa: cuando vence el tiempo que le correspondía a Eduardo, <strong>pierde el depósito de esa operación</strong> automáticamente. Así, abandonar una orden a medias deja de ser gratis, y quien actúa en serio no queda atrapado esperando indefinidamente.</p>
+<h2 id="si-te-corresponde-el-deposito-de-tu-contraparte">Si te corresponde el depósito de tu contraparte</h2>
+<p>Si tu contraparte pierde su depósito y a ti te toca una parte, tu cliente te pedirá una factura para enviarte esos sats. Dispones de un plazo definido por el nodo (por ejemplo, <strong>15 días</strong>) para reclamarla; si lo dejas pasar, pierdes el derecho a cobrar esa parte. Por eso conviene atender la solicitud de tu cliente en cuanto aparezca.</p>
+<h2 id="conclusion">Conclusión</h2>
+<p>El depósito anti-abuso persigue un objetivo claro: que en Mostro actuar de buena fe sea lo natural y que abusar salga caro, sin sacrificar privacidad ni descentralización. Quien cumple no paga nada; quien abusa, paga. Y como cada nodo decide sus reglas y las hace públicas, tú eliges siempre con la información por delante.</p>
+<h2 id="mas-informacion">Más información</h2>
+<ul>
+<li><strong>Documentación de usuario:</strong> <a rel="external" href="https://mostro.network/docs-spanish/anti-abuse-bond.html">Depósito anti-abuso</a></li>
+<li><strong>Especificación técnica:</strong> <a rel="external" href="https://github.com/MostroP2P/mostro/blob/main/docs/ANTI_ABUSE_BOND.md">ANTI_ABUSE_BOND.md</a></li>
+<li><strong>Documentación del protocolo:</strong> <a rel="external" href="https://mostro.network/protocol/add_bond_invoice.html">Add Bond Invoice</a></li>
+</ul>
+<p>¡Opera tranquilo: en Mostro, la honestidad siempre se recupera íntegra! 🧌🫶</p>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;x.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/x.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;primal.net&#x2F;p&#x2F;npub1m0str0d7z2ww8rdh20t2n9lx520xjwhaq24p68umqp06wwrwtsnqen40un">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/nostr.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;t.me&#x2F;mostrop2p">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/telegram.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;github.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/github.svg" alt="Mostro">
+              </a>
+            </li>
+            
+          </ul>
+          <p class="copyright text-muted"> &copy 2025 MOSTRO.
+             All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://mostro.network/blog/js/jquery.min.js"></script>
+  <script src="https://mostro.network/blog/js/bootstrap.bundle.min.js"></script>
+
+  <!--Custom scripts for this template-->
+  <script src="https://mostro.network/blog/js/clean-blog.min.js"></script>
+
+  <!--- Additional scripts -->
+  
+  
+</body>
+
+</html>

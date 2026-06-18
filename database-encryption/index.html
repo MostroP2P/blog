@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Mostro blog</title>
+
+  <link rel="stylesheet" href="https://mostro.network/blog/css/bootstrap.min.css">
+  <link href=" https://mostro.network/blog/css/all.min.css" rel=" stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://mostro.network/blog/clean-blog.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">
+        <img class="navbar-img" src="https://mostro.network/blog/img/mostro-icon-white.svg" alt="Mostro">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">Blog</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network">About</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.foundation">Foundation</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="&#x2F;blog&#x2F;es">es</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('https://mostro.network/blog/img/Data_Encryption.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          
+<h1>Identity Keys encryption on Mostro</h1>
+<span class="meta">Posted by
+    arkanoider
+    on 2025-05-30 12:00
+</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Hey Mostro fans! 👋
+We’ve got some exciting news for all you privacy-conscious folks out there: Mostro Core just got a major upgrade in how it keeps your most important secrets safe. Let’s talk about the brand new database encryption option, why it matters, and how it works in simple terms.</p>
+<h2 id="what-s-new">What’s New?</h2>
+<p>In today’s digital world, protecting sensitive information is more important than ever, especially in decentralized platforms like Mostro. That’s why we’re excited to announce a major upgrade in how Mostro Core keeps your secrets safe.</p>
+<p>Starting now, when an admin launches Mostro, they’ll see a friendly prompt:</p>
+<blockquote>
+<p><strong>“Do you want to password encrypt your database?”</strong></p>
+</blockquote>
+<p>With a simple yes or no, the admin decides if they want to add an extra lock to the most sensitive info. If they choose to password-protect, the identity/master key—also known as the index 0 key—is encrypted and can only be accessed with the admin’s password.</p>
+<p>This password is only required for the Mostro admin, and the encryption process is totally transparent for clients connecting to the daemon. Clients don’t need to worry about any extra steps!</p>
+<hr />
+<h2 id="why-should-you-care">Why Should You Care?</h2>
+<p>Here’s the cool part: Mostro now separates your order keys and reputation from your identity/master key. With this update, your master key (index 0) is stored safely with password-based encryption. This means that your orders and your reputation cannot be easily linked back to your identity—even if someone were to access your database file, it would be extremely difficult to connect the dots without your password.</p>
+<ul>
+<li><strong>Extra Privacy:</strong> Your identity/master key is shielded, so your orders, actions, and even your reputation can’t be easily linked back to you.</li>
+<li><strong>Peace of Mind:</strong> If your database leaks, your most important key remains safe behind your password.</li>
+<li><strong>Simple Choice:</strong> The admin is in control. Want that extra security? Just say yes at startup!</li>
+</ul>
+<p>Curious about how identity keys work and why they’re important? Check out our previous blog post: <a rel="external" href="https://mostro.network/blog/keys-management/">Identity Keys Management</a></p>
+<hr />
+<h2 id="who-should-use-this">Who Should Use This?</h2>
+<p>This feature is especially for Mostro admins who are really passionate about protecting users’ privacy and passwords. If you’re an admin who cares deeply about safeguarding your users’ sensitive info, this option is for you! It’s perfect for both power users and anyone just getting started with Mostro. If you want to keep your digital identity locked down, you’ll love this.</p>
+<hr />
+<h2 id="how-does-it-work-without-the-jargon">How Does It Work? (Without the Jargon)</h2>
+<ul>
+<li>On the first launch after updating, Mostro asks the admin if they want to set a password.</li>
+<li>If they set one, the identity/master key (index 0 key) is encrypted and safe—think of it like putting your passport in a locked safe.</li>
+<li>The password is managed by the Mostro admin and is used to encrypt specific columns in the daemon’s database. This entire encryption process happens behind the scenes and is totally transparent for clients using Mostro—no extra steps required!</li>
+</ul>
+<hr />
+<h2 id="a-peek-under-the-hood-how-encryption-works">A Peek Under the Hood: How Encryption Works</h2>
+<p>Okay, here’s a quick look for the curious minds who want to know what’s going on behind the curtains:</p>
+<ul>
+<li>When the admin sets a password, Mostro uses a technology called Argon2 to create a super-strong, unique encryption key just for you. (It’s like making a brand new, strong lock every time, using your password as the blueprint.)</li>
+<li>For each order, a different, salted encryption key is derived—so even if someone somehow cracked one, they wouldn’t get access to the others.</li>
+<li>These keys are then used to encrypt your data using a secure algorithm called ChaCha20-Poly1305.</li>
+<li>Finally, the encrypted result is converted to a machine-friendly ASCII string using Base64, making it easy for computers to store and handle—but impossible to read without the password.</li>
+</ul>
+<p>You don’t have to remember any of this technical stuff, but it’s nice to know that you’re getting some cutting-edge protection behind the scenes!</p>
+<hr />
+<h2 id="the-bottom-line">The Bottom Line</h2>
+<p>We believe privacy should be easy and accessible. With this new database encryption, Mostro Core helps you keep your identity key truly yours, and makes sure your orders and reputation stay private. So next time you’re asked about password-protecting your database, go ahead and give it a try!</p>
+<p>Stay safe out there, and happy trading! 🚀</p>
+<hr />
+<p><em>Questions or thoughts? Drop them in our <a rel="external" href="https://t.me/MostroP2P">Telegram chat</a></em></p>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;x.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/x.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;primal.net&#x2F;p&#x2F;npub1m0str0d7z2ww8rdh20t2n9lx520xjwhaq24p68umqp06wwrwtsnqen40un">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/nostr.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;t.me&#x2F;mostrop2p">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/telegram.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;github.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/github.svg" alt="Mostro">
+              </a>
+            </li>
+            
+          </ul>
+          <p class="copyright text-muted"> &copy 2025 MOSTRO.
+             All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://mostro.network/blog/js/jquery.min.js"></script>
+  <script src="https://mostro.network/blog/js/bootstrap.bundle.min.js"></script>
+
+  <!--Custom scripts for this template-->
+  <script src="https://mostro.network/blog/js/clean-blog.min.js"></script>
+
+  <!--- Additional scripts -->
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <link rel="stylesheet" href="https://mostro.network/blog/css/bootstrap.min.css">
+  <link href=" https://mostro.network/blog/css/all.min.css" rel=" stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://mostro.network/blog/clean-blog.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">
+        <img class="navbar-img" src="https://mostro.network/blog/img/mostro-icon-white.svg" alt="Mostro">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">Blog</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network">About</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.foundation">Foundation</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="&#x2F;blog&#x2F;es">es</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('https://mostro.network/blog/img/dev-fee.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          
+<h1>Financiamiento sostenible para el desarrollo de Mostro</h1>
+<span class="meta">Posted by
+    catrya
+    on 2026-01-08 12:00
+</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>El desarrollo de software libre y descentralizado se enfrenta a una pregunta incómoda pero inevitable:<br />
+<strong>¿cómo se financia sin perder independencia, privacidad o descentralización?</strong></p>
+<p>En Mostro decidimos no esquivar ese problema. En lugar de depender de donaciones esporádicas, sponsors o estructuras centralizadas, diseñamos un sistema que se integra de forma natural al funcionamiento de la red y se cuida solo.</p>
+<h2 id="el-desafio-del-financiamiento-descentralizado">El desafío del financiamiento descentralizado</h2>
+<p>Desarrollar y mantener una plataforma de intercambio peer-to-peer como Mostro requiere recursos constantes: nuevas funcionalidades, corrección de errores, mejoras de seguridad, auditorías de código y documentación. Tradicionalmente, este tipo de proyectos depende de donaciones voluntarias o financiamiento externo. El problema es que esos modelos suelen ser <strong>impredecibles</strong>, poco sostenibles en el tiempo o generan dependencias que van en contra del espíritu descentralizado.</p>
+<p>Necesitábamos algo distinto. Un sistema que fuera:</p>
+<ul>
+<li><strong>Automático</strong>, sin depender de la buena voluntad de las personas, sin recordatorios ni campañas</li>
+<li><strong>Transparente</strong>: Totalmente auditable por cualquiera</li>
+<li><strong>Justo</strong>: Sin cargar costos adicionales a los usuarios finales</li>
+<li><strong>Descentralizado</strong>: Sin crear puntos centralizados de control</li>
+</ul>
+<h2 id="la-idea-clave-contribuir-desde-las-ganancias-no-desde-el-uso">La idea clave: contribuir desde las ganancias, no desde el uso</h2>
+<p>La solución que implementamos es conceptualmente simple pero técnicamente sofisticada.</p>
+<p>Cada operador de una instancia de Mostro puede configurar un porcentaje (mínimo 10%, por defecto 30%) de las comisiones que <strong>él mismo gana</strong> para que sean donadas automáticamente al fondo de desarrollo.</p>
+<h3 id="un-ejemplo-concreto">Un ejemplo concreto</h3>
+<p>Imaginemos una operación típica:</p>
+<ul>
+<li><strong>Monto del intercambio</strong>: 100,000 sats</li>
+<li><strong>Comisión total</strong>: 1,000 sats (1%, repartido entre comprador y vendedor, aunque la comisión de cada instancia la decide su operador)</li>
+<li><strong>Dev fee configurado</strong>: 30%</li>
+<li><strong>Contribución al desarrollo</strong>: 300 sats</li>
+</ul>
+<p><strong>Lo importante</strong>: Los 300 sats los paga la instancia de Mostro desde sus ganancias, <strong>no se cargan al usuario</strong>. El comprador sigue pagando exactamente los mismos 500 sats de comisión, el vendedor otros 500 sats, y Mostro dona 300 sats de los 1,000 que recibió.</p>
+<h2 id="transparencia-total-mediante-nostr">Transparencia total mediante Nostr</h2>
+<p>Un sistema así solo funciona si puede ser auditado sin pedir permiso. Por eso, cada contribución al fondo de desarrollo genera automáticamente un evento público en <strong>Nostr</strong>.</p>
+<p>Ese evento incluye:</p>
+<ul>
+<li>El monto aportado</li>
+<li>La lightning address destino</li>
+<li>El hash del pago en Lightning</li>
+<li>El timestamp exacto</li>
+<li>La referencia a la orden que lo originó</li>
+</ul>
+<p>Estos eventos se publican usando un tipo específico (<code>kind 8383</code>), lo que permite a cualquiera reconstruir el historial completo de contribuciones y verificar que el sistema funciona exactamente como se describe.</p>
+<p>No hay reportes internos. No hay promesas. <strong>Hay datos verificables.</strong></p>
+<h2 id="un-sistema-que-funciona-en-segundo-plano">Un sistema que funciona en segundo plano</h2>
+<p>Una vez configurado, el mecanismo es completamente automático:</p>
+<ol>
+<li>El operador define su porcentaje (entre 10% y 100%)</li>
+<li>Cada operación exitosa genera una contribución</li>
+<li>Un scheduler interno procesa los pagos cada 60 segundos</li>
+<li>Los eventos se publican en Nostr</li>
+<li>Si algo falla, las operaciones continúan normalmente</li>
+</ol>
+<p>Nada de esto interfiere con la experiencia del usuario ni con el flujo de los intercambios.</p>
+<h2 id="incentivos-alineados-para-todos">Incentivos alineados para todos</h2>
+<p>Este modelo genera beneficios para todos los participantes.</p>
+<h3 id="operadores-de-mostro">Operadores de Mostro</h3>
+<ul>
+<li>Contribuyen al desarrollo de la herramienta que les genera ingresos</li>
+<li>Mantienen control total sobre su porcentaje de contribución</li>
+<li>Obtienen transparencia completa sobre sus aportes</li>
+</ul>
+<h3 id="usuarios">Usuarios</h3>
+<ul>
+<li>No pagan comisiones adicionales</li>
+<li>Usan una plataforma que mejora constantemente</li>
+<li>Pueden verificar públicamente cómo se financia el proyecto</li>
+</ul>
+<h3 id="proyecto">Proyecto</h3>
+<ul>
+<li>Obtiene financiamiento predecible</li>
+<li>Incentivos alineados: más uso significa más financiamiento</li>
+<li>Mantiene independencia y transparencia</li>
+</ul>
+<h2 id="implementacion-tecnica-sin-sorpresas">Implementación técnica sin sorpresas</h2>
+<p>Para quienes quieran profundizar, el sistema contempla:</p>
+<ul>
+<li>Cálculo unificado de comisiones para distintos tipos de órdenes</li>
+<li>Pagos asíncronos que no bloquean operaciones</li>
+<li>Manejo de condiciones de carrera</li>
+<li>Recuperación automática de órdenes abandonadas</li>
+<li>Validaciones robustas y timeouts bien definidos</li>
+</ul>
+<p>Todo el código es público, forma parte del repositorio principal de Mostro y la documentación técnica detalla cada aspecto de la implementación.</p>
+<h2 id="mas-que-un-dev-fee-un-modelo-de-sostenibilidad">Más que un dev fee: un modelo de sostenibilidad</h2>
+<p>Este sistema no es solo una forma de financiar desarrollo. Es una demostración práctica de que los proyectos descentralizados pueden sostenerse sin sacrificar sus principios.</p>
+<ul>
+<li><strong>Sin dependencias externas</strong>: Los fondos provienen del ecosistema mismo</li>
+<li><strong>Sin puntos centralizados de fallo</strong>: Cada operador decide su nivel de contribución</li>
+<li><strong>Sin costos para usuarios finales</strong>: Las contribuciones salen de las ganancias, no de nuevas comisiones</li>
+<li><strong>Con total transparencia</strong>: Toda la información es públicamente auditable</li>
+</ul>
+<h2 id="conclusion">Conclusión</h2>
+<p>El sistema de dev fee de Mostro demuestra que es posible combinar sostenibilidad económica con principios descentralizados. Al automatizar las contribuciones y hacer todo el proceso transparente mediante Nostr, creamos un modelo donde el crecimiento de la plataforma directamente financia su propio desarrollo.</p>
+<p>Los operadores obtienen una herramienta más robusta, los usuarios mantienen sus costos bajos, y el proyecto asegura recursos para continuar innovando. Es un ejemplo concreto de cómo la tecnología puede alinear incentivos para crear valor sostenible en el ecosistema Bitcoin.</p>
+<h2 id="mas-informacion">Más información</h2>
+<ul>
+<li><strong>Documentación técnica</strong>: <a rel="external" href="https://github.com/MostroP2P/mostro/blob/main/docs/DEV_FEE.md">https://github.com/MostroP2P/mostro/blob/main/docs/DEV_FEE.md</a></li>
+</ul>
+<p>¡La sostenibilidad del desarrollo ya no es una preocupación, sino una característica automática del sistema!</p>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;x.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/x.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;primal.net&#x2F;p&#x2F;npub1m0str0d7z2ww8rdh20t2n9lx520xjwhaq24p68umqp06wwrwtsnqen40un">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/nostr.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;t.me&#x2F;mostrop2p">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/telegram.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;github.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/github.svg" alt="Mostro">
+              </a>
+            </li>
+            
+          </ul>
+          <p class="copyright text-muted"> &copy 2025 MOSTRO.
+             All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://mostro.network/blog/js/jquery.min.js"></script>
+  <script src="https://mostro.network/blog/js/bootstrap.bundle.min.js"></script>
+
+  <!--Custom scripts for this template-->
+  <script src="https://mostro.network/blog/js/clean-blog.min.js"></script>
+
+  <!--- Additional scripts -->
+  
+  
+</body>
+
+</html>

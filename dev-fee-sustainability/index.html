@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Mostro blog</title>
+
+  <link rel="stylesheet" href="https://mostro.network/blog/css/bootstrap.min.css">
+  <link href=" https://mostro.network/blog/css/all.min.css" rel=" stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://mostro.network/blog/clean-blog.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">
+        <img class="navbar-img" src="https://mostro.network/blog/img/mostro-icon-white.svg" alt="Mostro">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">Blog</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network">About</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.foundation">Foundation</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="&#x2F;blog&#x2F;es">es</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('https://mostro.network/blog/img/dev-fee.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          
+<h1>Sustainable Funding for Mostro’s Development</h1>
+<span class="meta">Posted by
+    catrya
+    on 2026-01-08 12:00
+</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>The development of free and decentralized software inevitably runs into an uncomfortable but unavoidable question:<br />
+<strong>how do you fund it without sacrificing independence, privacy, or decentralization?</strong></p>
+<p>At Mostro, we chose not to dodge that question. Instead of relying on sporadic donations, sponsors, or centralized structures, we designed a system that integrates naturally into how the network already works—and sustains itself.</p>
+<h2 id="the-challenge-of-decentralized-funding">The challenge of decentralized funding</h2>
+<p>Building and maintaining a peer-to-peer exchange platform like Mostro requires continuous resources: new features, bug fixes, security improvements, code audits, and documentation. Traditionally, projects like this depend on voluntary donations or external funding. The problem is that these models tend to be <strong>unpredictable</strong>, hard to sustain over time, or they create dependencies that run counter to the decentralized ethos.</p>
+<p>We needed something different. A system that was:</p>
+<ul>
+<li><strong>Automatic</strong>, without relying on goodwill, reminders, or fundraising campaigns</li>
+<li><strong>Transparent</strong>: fully auditable by anyone</li>
+<li><strong>Fair</strong>: without adding extra costs for end users</li>
+<li><strong>Decentralized</strong>: without introducing centralized points of control</li>
+</ul>
+<h2 id="the-core-idea-contribute-from-earnings-not-from-usage">The core idea: contribute from earnings, not from usage</h2>
+<p>The solution we implemented is conceptually simple, but technically sophisticated.</p>
+<p>Each Mostro instance operator can configure a percentage (minimum 10%, default 30%) of the fees <strong>they personally earn</strong> to be automatically donated to the development fund.</p>
+<h3 id="a-concrete-example">A concrete example</h3>
+<p>Let’s look at a typical trade:</p>
+<ul>
+<li><strong>Trade amount</strong>: 100,000 sats</li>
+<li><strong>Total fee</strong>: 1,000 sats (1%, split between buyer and seller, although each instance operator defines their own fee)</li>
+<li><strong>Configured dev fee</strong>: 30%</li>
+<li><strong>Contribution to development</strong>: 300 sats</li>
+</ul>
+<p><strong>The key point</strong>: those 300 sats are paid by the Mostro instance out of its own earnings—<strong>they are not charged to the user</strong>. The buyer still pays exactly the same 500 sats in fees, the seller pays the other 500 sats, and the instance donates 300 sats from the 1,000 it received.</p>
+<h2 id="full-transparency-through-nostr">Full transparency through Nostr</h2>
+<p>A system like this only works if it can be audited without asking for permission. That’s why every contribution to the development fund automatically generates a public event on <strong>Nostr</strong>.</p>
+<p>Each event includes:</p>
+<ul>
+<li>The contributed amount</li>
+<li>The destination Lightning address</li>
+<li>The Lightning payment hash</li>
+<li>The exact timestamp</li>
+<li>A reference to the order that generated it</li>
+</ul>
+<p>These events are published using a specific event type (<code>kind 8383</code>), allowing anyone to reconstruct the full history of contributions and verify that the system works exactly as described.</p>
+<p>No internal reports. No promises. <strong>Just verifiable data.</strong></p>
+<h2 id="a-system-that-runs-in-the-background">A system that runs in the background</h2>
+<p>Once configured, the mechanism is entirely automatic:</p>
+<ol>
+<li>The operator sets their percentage (between 10% and 100%)</li>
+<li>Each successful trade generates a contribution</li>
+<li>An internal scheduler processes payments every 60 seconds</li>
+<li>Events are published to Nostr</li>
+<li>If anything fails, trading continues as normal</li>
+</ol>
+<p>None of this interferes with the user experience or the exchange flow.</p>
+<h2 id="aligned-incentives-for-everyone">Aligned incentives for everyone</h2>
+<p>This model creates benefits for all participants.</p>
+<h3 id="mostro-operators">Mostro operators</h3>
+<ul>
+<li>Contribute to the development of the tool that generates their income</li>
+<li>Retain full control over their contribution percentage</li>
+<li>Enjoy complete transparency over their contributions</li>
+</ul>
+<h3 id="users">Users</h3>
+<ul>
+<li>Pay no additional fees</li>
+<li>Use a platform that continuously improves</li>
+<li>Can publicly verify how the project is funded</li>
+</ul>
+<h3 id="the-project">The project</h3>
+<ul>
+<li>Gains predictable funding</li>
+<li>Aligned incentives: more usage means more funding</li>
+<li>Maintains independence and transparency</li>
+</ul>
+<h2 id="technical-implementation-with-no-surprises">Technical implementation with no surprises</h2>
+<p>For those who want to dive deeper, the system includes:</p>
+<ul>
+<li>Unified fee calculation across different order types</li>
+<li>Asynchronous payments that do not block operations</li>
+<li>Proper handling of race conditions</li>
+<li>Automatic recovery of abandoned orders</li>
+<li>Robust validations and well-defined timeouts</li>
+</ul>
+<p>All the code is public, part of Mostro’s main repository, and the technical documentation explains every aspect of the implementation in detail.</p>
+<h2 id="more-than-a-dev-fee-a-sustainability-model">More than a dev fee: a sustainability model</h2>
+<p>This system is not just a way to fund development. It is a practical demonstration that decentralized projects can be sustainable without compromising their principles.</p>
+<ul>
+<li><strong>No external dependencies</strong>: funds come from within the ecosystem itself</li>
+<li><strong>No centralized points of failure</strong>: each operator chooses their level of contribution</li>
+<li><strong>No cost to end users</strong>: contributions come from earnings, not new fees</li>
+<li><strong>Complete transparency</strong>: all information is publicly auditable</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Mostro’s dev fee system shows that economic sustainability and decentralized principles can coexist. By automating contributions and making the entire process transparent through Nostr, we created a model where the platform’s growth directly funds its own development.</p>
+<p>Operators get a stronger tool, users keep their costs low, and the project secures the resources it needs to keep innovating. It’s a concrete example of how technology can align incentives to create sustainable value within the Bitcoin ecosystem.</p>
+<h2 id="more-information">More information</h2>
+<ul>
+<li><strong>Technical documentation</strong>: <a rel="external" href="https://github.com/MostroP2P/mostro/blob/main/docs/DEV_FEE.md">https://github.com/MostroP2P/mostro/blob/main/docs/DEV_FEE.md</a></li>
+</ul>
+<p>Development sustainability is no longer a concern—it’s an automatic feature of the system!</p>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;x.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/x.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;primal.net&#x2F;p&#x2F;npub1m0str0d7z2ww8rdh20t2n9lx520xjwhaq24p68umqp06wwrwtsnqen40un">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/nostr.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;t.me&#x2F;mostrop2p">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/telegram.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;github.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/github.svg" alt="Mostro">
+              </a>
+            </li>
+            
+          </ul>
+          <p class="copyright text-muted"> &copy 2025 MOSTRO.
+             All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://mostro.network/blog/js/jquery.min.js"></script>
+  <script src="https://mostro.network/blog/js/bootstrap.bundle.min.js"></script>
+
+  <!--Custom scripts for this template-->
+  <script src="https://mostro.network/blog/js/clean-blog.min.js"></script>
+
+  <!--- Additional scripts -->
+  
+  
+</body>
+
+</html>

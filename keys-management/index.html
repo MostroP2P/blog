@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Mostro blog</title>
+
+  <link rel="stylesheet" href="https://mostro.network/blog/css/bootstrap.min.css">
+  <link href=" https://mostro.network/blog/css/all.min.css" rel=" stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://mostro.network/blog/clean-blog.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">
+        <img class="navbar-img" src="https://mostro.network/blog/img/mostro-icon-white.svg" alt="Mostro">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">Blog</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network">About</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.foundation">Foundation</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="&#x2F;blog&#x2F;es">es</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('https://mostro.network/blog/img/gift.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          
+<h1>Keys management on Mostro</h1>
+<span class="meta">Posted by
+    negrunch
+    on 2025-02-01 12:00
+</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Keys management on Mostro might sound complicated if you have never dealt with technical concepts related to security and cryptography. However, we will explain it with examples you might encounter in your everyday life. It’s easier than it seems!</p>
+<h2 id="imagine-sending-a-wrapped-gift">Imagine Sending a Wrapped Gift</h2>
+<p>Let’s think of key management as the process of exchanging <a rel="external" href="https://github.com/nostr-protocol/nips/blob/master/59.md">wrapped gifts</a>. When you send a gift to someone, you want to make sure that only that person can open it. In the world of Mostro, these gifts are the data you send, and the wrapping is the layer of security that protects them.</p>
+<p>In this case, the keys are like the secret combinations needed to open that wrapping. Mostro uses an ephemeral key for each message sent between the client and the platform. These ephemeral keys, an essential feature of the <strong>gift wraps</strong>, ensure that each message is protected individually and uniquely.</p>
+<h2 id="key-rotation-changing-the-lock-for-each-operation">Key Rotation: Changing the Lock for Each Operation</h2>
+<p>Suppose that in the physical world you need to exchange a package with Bob. For this, Bob and you must exchange several confidential letters to agree on how to make the exchange. For this operation, you will use a different identity than the one you use in your subsequent transactions with other users. Even if you were to transact with Bob again, both of you would be using distinct identities. That’s what Mostro does with key rotation!</p>
+<p>Each time a user creates or takes a buy or sell order, a new key specific to that operation is generated. These keys are derived from a seed that the client randomly generates for the user. From this seed, many keys can be derived: the public key at index <code>0</code> (derivation path <code>m/44'/1237'/38383'/0/0</code>) acts as the main identifier with Mostro, while the keys with indices starting from <code>1</code> (for example, <code>m/44'/1237'/38383'/0/1</code>) are the ones rotated for each new order. This way, even though the key for an operation remains constant while the operation lasts, once it is completed a new key is used for the next order, ensuring additional security.</p>
+<h2 id="ephemeral-keys-disposable-locks-for-unique-messages">Ephemeral Keys: Disposable Locks for Unique Messages</h2>
+<p>Now imagine that you need to send an important letter by mail, but you don’t want to use your usual lock to protect it. Instead, you use a disposable lock that is only useful for that particular delivery. Once the letter reaches its destination, the lock is no longer of use.</p>
+<p>In Mostro, ephemeral keys work in a similar way. They are keys created to protect data for a short period or for a specific purpose, such as an individual message between the client and Mostro. Once the message is processed, that key is destroyed and cannot be used again. This minimizes the risk of someone taking advantage of a compromised key.</p>
+<h2 id="reputation-vs-full-private-mode">Reputation vs. Full Private Mode</h2>
+<p>Mostro allows users to choose between two operating modes: <strong>reputation</strong> and <strong>full private mode</strong>.</p>
+<ul>
+<li>
+<p><strong>Reputation Mode</strong>: As mentioned earlier, users identify themselves to Mostro with the public key at index <code>0</code> (<code>m/44'/1237'/38383'/0/0</code>). This allows for the reputation to be tied to this key. Only Mostro and the user know this public key, ensuring the user’s privacy. Mostro takes care of calculating the reputation based on the counterparty’s rating.</p>
+</li>
+<li>
+<p><strong>Full Private Mode</strong>: This mode allows users to operate without needing to send an identifying key. In this way, Mostro cannot link orders from the same user, which guarantees the highest level of privacy and security. Due to the private nature of this mode, it is not possible to maintain a reputation for the user.</p>
+</li>
+</ul>
+<h2 id="why-is-this-important">Why Is This Important?</h2>
+<p>Think about how hard you work to protect something valuable, like a confidential document or a special gift. Key management on Mostro ensures that all the information and operations carried out are protected at the highest level. By combining the use of ephemeral keys to protect each message and key rotation for each operation, Mostro guarantees that your data is always safe.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In summary, key management on Mostro can be understood as the art of using unique, temporary, and specific security combinations to keep your data protected. Whether using ephemeral keys for individual messages or rotating keys derived from a seed for each order, the system is designed to offer peace of mind and security in every interaction.</p>
+<p>Now you know that Mostro not only protects your data but does so efficiently and carefully, as if every piece of data were a wrapped gift just for you!</p>
+<h2 id="more-information">More Information</h2>
+<p><strong>Keys Management in the Mostro Protocol</strong>: <a rel="external" href="https://mostro.network/protocol/key_management">https://mostro.network/protocol/keys-management</a></p>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;x.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/x.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;primal.net&#x2F;p&#x2F;npub1m0str0d7z2ww8rdh20t2n9lx520xjwhaq24p68umqp06wwrwtsnqen40un">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/nostr.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;t.me&#x2F;mostrop2p">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/telegram.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;github.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/github.svg" alt="Mostro">
+              </a>
+            </li>
+            
+          </ul>
+          <p class="copyright text-muted"> &copy 2025 MOSTRO.
+             All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://mostro.network/blog/js/jquery.min.js"></script>
+  <script src="https://mostro.network/blog/js/bootstrap.bundle.min.js"></script>
+
+  <!--Custom scripts for this template-->
+  <script src="https://mostro.network/blog/js/clean-blog.min.js"></script>
+
+  <!--- Additional scripts -->
+  
+  
+</body>
+
+</html>

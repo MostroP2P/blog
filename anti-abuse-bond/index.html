@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Mostro blog</title>
+
+  <link rel="stylesheet" href="https://mostro.network/blog/css/bootstrap.min.css">
+  <link href=" https://mostro.network/blog/css/all.min.css" rel=" stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://mostro.network/blog/clean-blog.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">
+        <img class="navbar-img" src="https://mostro.network/blog/img/mostro-icon-white.svg" alt="Mostro">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">Blog</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network">About</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.foundation">Foundation</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="&#x2F;blog&#x2F;es">es</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('https://mostro.network/blog/img/anti-abuse-bond.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          
+<h1>The Anti-Abuse Bond: Putting Honesty Up as Collateral</h1>
+<span class="meta">Posted by
+    catrya
+    on 2026-06-17 12:00
+</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Building a decentralized, censorship-resistant, and private P2P exchange system on Nostr, like Mostro, comes with a hard challenge: how do you mitigate abuse?</p>
+<p>A malicious user can try to flood a Mostro’s order book with spam offers, just to be a nuisance and bury the real offers in the noise. Or the other way around: empty the book by taking every offer just so they vanish. And since Mostro is anonymous—and creating a new identity is as easy as generating a key pair—there are also those who simply try to scam their counterparty. How do you stop both the one sabotaging the order book and the one trying to scam other users?</p>
+<p>It’s true that we already have defenses. Against scams, there is a dispute system, and the escrow’s hold invoice is not released until the seller confirms they received the fiat, so a scammer rarely achieves their goal; and against spam, Mostro applies a <a rel="external" href="https://mostro.network/protocol/chat.html#other-considerations">proof of work</a> that makes flooding the network with events more expensive. But neither was enough: for the scammer, trying cost nothing, and the proof of work doesn’t stop a determined attacker. Whoever tried and failed would simply try again.</p>
+<h2 id="a-decision-that-took-us-time">A decision that took us time</h2>
+<p>We had been thinking about an anti-abuse bond for a while, but what held us back was this: if someone completely new wants to buy sats, how are they going to pay a bond if they don’t have sats yet?</p>
+<p>The answer was not to impose it. We decided this feature would be <strong>optional</strong>: each Mostro node administrator can enable it or not, and set whatever conditions they see fit according to the characteristics of their own community. A node aimed at newcomers can do without it; another one, more exposed to abuse, can turn it on. The network decides, not us.</p>
+<h2 id="what-is-the-anti-abuse-bond">What is the anti-abuse bond?</h2>
+<p>The idea is the same as a rental deposit. When you rent an apartment they ask you for a security deposit: if you return everything in order, you get it back in full; you only lose it if you break something. It works because it aligns incentives—you take better care of what you know could cost you.</p>
+<p>In Mostro, when entering a trade you put up a small amount of sats as collateral that you get back <strong>in full</strong> if you act in good faith, but which you lose if you try to scam your counterparty, empty the order book or spam it, or if you fail to do your part. The consequence is direct: both the scammer and the spammer stop playing for free. They now put <strong>their own money at risk</strong>, and that discourages abuse before it happens.</p>
+<h2 id="each-node-sets-its-own-rules">Each node sets its own rules</h2>
+<p>Remember that Mostro is not a single server, but many nodes competing with each other. Each node that enables the bond defines its own rules: who it asks for it (whoever creates the order, whoever takes it, or both) and how much it is. The amount is usually a small percentage of the order value—for example, <strong>1%</strong> with a minimum in sats—but that percentage is decided by each node.</p>
+<blockquote>
+<p><strong>Tip:</strong> You can check whether the node you are using requires an anti-abuse bond—and how much it would be—from your own Mostro client, in the <em>About</em> section, before trading.</p>
+</blockquote>
+<h2 id="isn-t-it-the-same-as-the-escrow">Isn’t it the same as the escrow?</h2>
+<p>No. The bond is completely independent from the trade escrow. It is a second hold invoice: your sats are only locked in your wallet, they are not spent. If everything goes well, they are unlocked and returned to you without ever having left your wallet. It is not mixed with or deducted from the trade amount.</p>
+<p>So, under normal conditions, the bond is not a cost: it returns to your wallet in full, just like the sats locked in any hold invoice.</p>
+<h2 id="when-do-i-get-my-bond-back">When do I get my bond back?</h2>
+<p>You get <strong>100%</strong> back as long as you do your part:</p>
+<ul>
+<li>You complete the trade correctly.</li>
+<li>You cancel the order cooperatively.</li>
+<li>A dispute arises and the administrator does not determine that you acted in bad faith.</li>
+</ul>
+<h2 id="and-when-can-i-lose-it">And when can I lose it?</h2>
+<p>You only lose your bond for trying to abuse the system. There are two situations:</p>
+<ol>
+<li><strong>By decision in a dispute.</strong> An administrator (<em>solver</em>), after reviewing the evidence, determines that you acted in bad faith and instructs Mostro to claim your bond.</li>
+<li><strong>By failing to do your part and letting the time run out.</strong> If you take or create an order and then do not pay the order’s hold invoice or do not provide your invoice in time, you let the deadline that was your responsibility expire. This only applies if the node enabled that policy.</li>
+</ol>
+<h2 id="where-do-the-sats-from-a-claimed-bond-go">Where do the sats from a claimed bond go?</h2>
+<p>When a bond is claimed by decision in a dispute, the sats are split between the node—which thereby funds the work of resolving disputes and keeping the service running—and the honest counterparty, as compensation for the harm. The proportion of that split is defined by each node and is public, so you can know it before trading.</p>
+<p>If instead it is claimed for letting the deadline expire, the sats go to the node.</p>
+<h2 id="let-s-see-it-with-an-example">Let’s see it with an example</h2>
+<p><strong>A seller who wants to keep it all.</strong> Carlos creates a sell order (he is the <strong>seller</strong>) and Diana takes it to buy sats (she is the <strong>buyer</strong>), on a node that requires an anti-abuse bond. Diana makes the fiat transfer correctly and keeps the receipt. But Carlos, in bad faith, refuses to release the sats and claims he never received the payment, hoping to keep both the fiat and the sats.</p>
+<p>Diana opens a dispute and presents the administrator with the receipt for the transfer. The <em>solver</em> confirms that Diana paid: Mostro releases the escrow sats in her favor and <strong>claims Carlos’s bond</strong>. As compensation for the trouble, Diana receives a share of that bond; the rest goes to the node. Carlos not only failed in his scam, but lost his own money for attempting it.</p>
+<p><strong>Someone who takes an order and disappears.</strong> Eduardo takes an order to buy sats and Mostro asks him for the next step to continue. But Eduardo simply stops responding: he doesn’t pay, doesn’t move forward, doesn’t cancel. His counterparty is left hanging, waiting for someone who is never going to show up.</p>
+<p>On a node that enabled the deadline policy, there’s no need to open any dispute: when the time that was Eduardo’s responsibility runs out, he <strong>loses the bond for that trade</strong> automatically. This way, abandoning a trade halfway stops being free, and whoever is acting seriously is not left stuck waiting indefinitely.</p>
+<h2 id="if-you-are-owed-your-counterparty-s-bond">If you are owed your counterparty’s bond</h2>
+<p>If your counterparty loses their bond and you are owed a share, your client will ask you for an invoice to send you those sats. You have a window defined by the node (for example, <strong>15 days</strong>) to claim it; if you let it pass, you lose the right to collect that share. That is why it is best to attend to your client’s request as soon as it appears.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The anti-abuse bond pursues a clear goal: making acting in good faith the natural thing in Mostro, and making abuse expensive, without sacrificing privacy or decentralization. Whoever does their part pays nothing; whoever abuses, pays. And since each node decides its own rules and makes them public, you always choose with the information in front of you.</p>
+<h2 id="more-information">More information</h2>
+<ul>
+<li><strong>User documentation:</strong> <a rel="external" href="https://mostro.network/docs-english/anti-abuse-bond.html">Anti-Abuse Bond</a></li>
+<li><strong>Technical specification:</strong> <a rel="external" href="https://github.com/MostroP2P/mostro/blob/main/docs/ANTI_ABUSE_BOND.md">ANTI_ABUSE_BOND.md</a></li>
+<li><strong>Protocol documentation:</strong> <a rel="external" href="https://mostro.network/protocol/add_bond_invoice.html">Add Bond Invoice</a></li>
+</ul>
+<p>Trade with peace of mind: in Mostro, honesty always comes back to you in full! 🧌🫶</p>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;x.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/x.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;primal.net&#x2F;p&#x2F;npub1m0str0d7z2ww8rdh20t2n9lx520xjwhaq24p68umqp06wwrwtsnqen40un">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/nostr.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;t.me&#x2F;mostrop2p">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/telegram.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;github.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/github.svg" alt="Mostro">
+              </a>
+            </li>
+            
+          </ul>
+          <p class="copyright text-muted"> &copy 2025 MOSTRO.
+             All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://mostro.network/blog/js/jquery.min.js"></script>
+  <script src="https://mostro.network/blog/js/bootstrap.bundle.min.js"></script>
+
+  <!--Custom scripts for this template-->
+  <script src="https://mostro.network/blog/js/clean-blog.min.js"></script>
+
+  <!--- Additional scripts -->
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <link rel="stylesheet" href="https://mostro.network/blog/css/bootstrap.min.css">
+  <link href=" https://mostro.network/blog/css/all.min.css" rel=" stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://mostro.network/blog/clean-blog.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">
+        <img class="navbar-img" src="https://mostro.network/blog/img/mostro-icon-white.svg" alt="Mostro">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network&#x2F;blog">Blog</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.network">About</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="https:&#x2F;&#x2F;mostro.foundation">Foundation</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link"
+              href="&#x2F;blog&#x2F;es">es</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('https://mostro.network/blog/img/first-post.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          
+<h1>Estado actual en Mostro</h1>
+<span class="meta">Posted by
+    negrunch
+    on 2024-12-20 00:00
+</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Desde hace más de un año hemos estado trabajando incansablemente en Mostro, y aquí tienes un breve resumen.</p>
+<h2 id="gestion-de-llaves">Gestión de llaves</h2>
+<p>Hemos realizado muchas mejoras y probablemente una de las más importantes sea el diseño final de la gestión de llaves. Empezamos a discutir esta idea el trimestre pasado y la comentamos en el último informe. La gestión de llaves es una forma en que los clientes rotan las llaves para cada operación, añadiendo otra capa de privacidad a la implementación previa de gift wrap. Puedes encontrar información más detallada <a rel="external" href="https://github.com/MostroP2P/mostro/pull/398">aquí</a>. Hoy hemos fusionado nuestro <a rel="external" href="https://github.com/MostroP2P/mostro/pull/398">PR</a> principal para implementarlo en mostrod, y también lo implementamos en <a rel="external" href="https://github.com/MostroP2P/mostro-core/pull/67/files">mostro-core</a> y <a rel="external" href="https://github.com/MostroP2P/mostro-cli/pull/89">mostro-cli</a>.</p>
+<h2 id="nuevo-nostr-nip-fusionado">Nuevo Nostr NIP fusionado</h2>
+<p>También tuvimos nuestro primer NIP oficial fusionado, <a rel="external" href="https://github.com/nostr-protocol/nips/blob/master/69.md">NIP-69</a>. Con esto buscamos estandarizar todas las órdenes de la plataforma peer-to-peer en Nostr para tener un gran pool de liquidez fácilmente filtrable.</p>
+<h2 id="b4os">B4OS</h2>
+<p>Mostro fue uno de los proyectos que participó en la <a rel="external" href="https://www.libreriadesatoshi.com/b4os">residencia b4os</a>, la cual se llevó a cabo en Buenos Aires justo después de la <a rel="external" href="https://www.labitconf.com/">LABITCONF</a> de este año.</p>
+<p>Yo participé como mentor, yendo allí diariamente durante todo el programa, ayudando a los desarrolladores a comenzar con Mostro. Mostro recibió mucha atención y contó con el mayor número de colaboradores trabajando en él (8 en total). Tuvimos dos semanas muy productivas en las que refinamos cómo Mostro manejará la privacidad y la reputación al mismo tiempo. Esto requerirá algunos cambios en mostrod y mejoras en la <a rel="external" href="https://mostro.network/protocol/">documentación del protocolo</a>, para la cual (cruzando los dedos) ahora tenemos una versión final.</p>
+<p>Durante la residencia b4os, recibimos <a rel="external" href="https://github.com/MostroP2P/mostro-regtest/pull/2">contribuciones</a> que mejoraron nuestros contenedores Docker de Mostro — un trabajo increíble que puedes ver <a rel="external" href="https://github.com/MostroP2P/mostro-regtest">aquí</a>.</p>
+<h2 id="fundacion-mostro">Fundación Mostro</h2>
+<p>También avanzamos en el establecimiento de la Fundación Mostro, que servirá como entidad legal para gestionar donaciones y dirigirlas a los desarrolladores que deseen contribuir. Otro <a rel="external" href="https://github.com/MostroP2P/mostro-foundation-website">colaborador</a> creó el <a rel="external" href="https://mostro.foundation/">sitio web de la Fundación Mostro</a>.</p>
+<h2 id="mostro-tools">Mostro-tools</h2>
+<p>Ya contamos con colaboradores trabajando en <a rel="external" href="https://github.com/MostroP2P/mostro-tools">mostro-tools</a>, una biblioteca en TypeScript que implementa el <a rel="external" href="https://mostro.network/protocol/">protocolo Mostro</a>.</p>
+<h2 id="aplicacion-movil">Aplicación móvil</h2>
+<p>Nuestro intento anterior de crear la aplicación móvil fracasó, el desarrollador se fue, así que encontramos a otro desarrollador; la tercera es la vencida. Ahora estamos avanzando con la aplicación móvil, que está siendo desarrollada por un desarrollador llamado Biz. Trabajar en Mostro es algo complejo porque nos centramos en la privacidad y la resistencia a la censura, y nuestro objetivo principal es entregar estas funciones de privacidad en una aplicación fácil de usar. Quiero que esta aplicación sea muy intuitiva, adecuada incluso para usuarios no técnicos. Biz entregó una primera aplicación móvil funcional; podemos ver todo el trabajo <a rel="external" href="https://github.com/MostroP2P/mobile/pull/31">aquí</a> y <a rel="external" href="https://github.com/MostroP2P/mobile/pull/33">aquí</a>. La probamos y funciona :D</p>
+<h2 id="mostrui">Mostrui</h2>
+<p>Finalmente, iniciamos otro cliente, una Interfaz de Usuario de Terminal (TUI) que nos está ayudando a implementar y comprender los problemas que los desarrolladores de clientes pueden encontrar en el proceso de construir un cliente. Este cliente se llama <a rel="external" href="https://github.com/MostroP2P/mostrui">Mostrui</a>.</p>
+<p>Todo esto no hubiera sido posible sin el apoyo de <a rel="external" href="https://hrf.org/">HRF</a>, <a rel="external" href="https://opensats.org/">Opensats</a> y todos los colaboradores &lt;3</p>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;x.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/x.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;primal.net&#x2F;p&#x2F;npub1m0str0d7z2ww8rdh20t2n9lx520xjwhaq24p68umqp06wwrwtsnqen40un">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/nostr.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;t.me&#x2F;mostrop2p">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/telegram.svg" alt="Mostro">
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a class="social-button" href="https:&#x2F;&#x2F;github.com&#x2F;MostroP2P">
+                <img class="social-button-img"  src="https://mostro.network/blog/img/github.svg" alt="Mostro">
+              </a>
+            </li>
+            
+          </ul>
+          <p class="copyright text-muted"> &copy 2025 MOSTRO.
+             All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://mostro.network/blog/js/jquery.min.js"></script>
+  <script src="https://mostro.network/blog/js/bootstrap.bundle.min.js"></script>
+
+  <!--Custom scripts for this template-->
+  <script src="https://mostro.network/blog/js/clean-blog.min.js"></script>
+
+  <!--- Additional scripts -->
+  
+  
+</body>
+
+</html>
