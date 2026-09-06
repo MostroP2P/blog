@@ -21,3 +21,7 @@ Build the application for production:
 ```bash
 zola build
 ```
+
+## License
+
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
